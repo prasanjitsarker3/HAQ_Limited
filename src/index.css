@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.primaryColor {
+    color: #F4BE2C;
+}

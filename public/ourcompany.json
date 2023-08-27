@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "name": "Company A",
+        "image": "https://cdn-icons-png.flaticon.com/128/3968/3968677.png",
+        "title": "Leading Technology",
+        "description": "Providing innovative solutions for businesses worldwide.",
+        "about": "Company A is a global technology company...",
+        "category": "Technology"
+    },
+    {
+        "id": 2,
+        "name": "Company B",
+        "image": "https://cdn-icons-png.flaticon.com/128/9956/9956749.png",
+        "title": "Creative Design",
+        "description": "Bringing creative visions to life through design.",
+        "about": "At Company B, our mission is to...",
+        "category": "Design"
+    },
+    
+    {
+        "id": 3,
+        "name": "Company D",
+        "image": "https://cdn-icons-png.flaticon.com/128/4547/4547846.png",
+        "title": "Financial Services",
+        "description": "Enabling individuals and businesses to manage their finances.",
+        "about": "At Company D, we offer a wide range of financial...",
+        "category": "Finance"
+    },
+    {
+        "id": 4,
+        "name": "Company E",
+        "image": "https://cdn-icons-png.flaticon.com/128/7451/7451006.png",
+        "title": "Eco-Friendly Products",
+        "description": "Sustainable products for a greener future.",
+        "about": "Company E is committed to creating products...",
+        "category": "Environment"
+    },
+    {
+        "id": 5,
+        "name": "Company F",
+        "image": "https://cdn-icons-png.flaticon.com/128/8124/8124621.png",
+        "title": "Food and Beverage",
+        "description": "Delicious culinary experiences for food enthusiasts.",
+        "about": "At Company F, we believe in the power of...",
+        "category": "Food"
+    },
+    {
+        "id": 6,
+        "name": "Company H",
+        "image": "https://cdn-icons-png.flaticon.com/128/6981/6981799.png",
+        "title": "Fashion and Apparel",
+        "description": "Inspiring style and self-expression through fashion.",
+        "about": "At Company H, fashion is more than just clothing...",
+        "category": "Fashion"
+    }
+]
