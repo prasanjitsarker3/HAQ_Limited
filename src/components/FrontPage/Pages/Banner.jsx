@@ -36,7 +36,7 @@ const Banner = () => {
                             <Typography
                                 variant="lead"
                                 color="white"
-                                className="mb-12 px-12 opacity-80"
+                                className="mb-12 px-12 opacity-80 md:text-lg text-xs"
                             >
                                 Our dedicated call center team is available around the clock to assist you with any questions or issues.
                                 We take pride in delivering prompt, courteous, and effective solutions to all your inquiries.
@@ -75,7 +75,7 @@ const Banner = () => {
                             <Typography
                                 variant="lead"
                                 color="white"
-                                className="mb-12 px-12 opacity-80"
+                                className="mb-12 px-12 opacity-80 md:text-lg text-xs"
                             >
                                 Expedite your passport application with our efficient and speedy processing.Trust in our reliable services to ensure your passport is ready when you need it.
                             </Typography>
@@ -113,7 +113,7 @@ const Banner = () => {
                             <Typography
                                 variant="lead"
                                 color="white"
-                                className="mb-12 px-20 opacity-80 "
+                                className="mb-12 px-20 opacity-80 md:text-lg text-xs"
                             >
                                 Your journey to a fulfilling career begins with us. Unlock opportunities and find your dream job that aligns with your passions and aspirations.
                             </Typography>

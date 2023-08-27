@@ -1,4 +1,4 @@
-import { Button } from '@material-tailwind/react'
+import { Avatar, Button, Menu, MenuHandler, MenuItem, MenuList } from '@material-tailwind/react'
 import {
     Navbar,
     MobileNav,
@@ -69,19 +69,32 @@ const Header = () => {
                 <Typography
                     as="a"
                     href="#"
-                    className="mr-4 cursor-pointer text-2xl py-1.5 font-medium"
+                    className="mr-4 cursor-pointer text-2xl py-1.5 font-medium primaryColor"
                 >
                     HAO Limited
                 </Typography>
                 <div className="flex items-center gap-4">
                     <div className="mr-4 hidden lg:block">{navList}</div>
-                    <Button
-                        variant="gradient"
-                        size='md'
+                    <h1
+
                         className="hidden lg:inline-block"
                     >
-                        <span>Buy Now</span>
-                    </Button>
+                        <Menu>
+                            <MenuHandler>
+                                <Avatar
+                                    src="https://img.freepik.com/premium-vector/young-smiling-man-adam-avatar-3d-vector-people-character-illustration-cartoon-minimal-style_365941-687.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=sph"
+                                    alt="avatar"
+                                    withBorder={true}
+                                    className="p-0.5 cursor-pointer"
+                                />
+                            </MenuHandler>
+                            <MenuList>
+                                <MenuItem>Menu Item 1</MenuItem>
+                                <MenuItem>Menu Item 2</MenuItem>
+                                <MenuItem>Menu Item 3</MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </h1>
                     <IconButton
                         variant="text"
                         className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -123,9 +136,21 @@ const Header = () => {
             </div>
             <MobileNav open={openNav}>
                 {navList}
-                <Button variant="gradient" size="sm" fullWidth className="mb-2">
-                    <span>Buy Now</span>
-                </Button>
+                <Menu>
+                    <MenuHandler>
+                        <Avatar
+                            src="https://img.freepik.com/premium-vector/young-smiling-man-adam-avatar-3d-vector-people-character-illustration-cartoon-minimal-style_365941-687.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=sph"
+                            alt="avatar"
+                            withBorder={true}
+                            className="p-0.5 cursor-pointer"
+                        />
+                    </MenuHandler>
+                    <MenuList>
+                        <MenuItem>Menu Item 1</MenuItem>
+                        <MenuItem>Menu Item 2</MenuItem>
+                        <MenuItem>Menu Item 3</MenuItem>
+                    </MenuList>
+                </Menu>
             </MobileNav>
         </Navbar>
     );
