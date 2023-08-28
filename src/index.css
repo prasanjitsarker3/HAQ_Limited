@@ -5,3 +5,35 @@
 .primaryColor {
     color: #F4BE2C;
 }
+
+.card {
+    border-radius: 20px;
+    border: 8px solid #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card:hover .card-body {
+    right: 0;
+
+}
+
+.card-body {
+    position: absolute;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    right: -100%;
+    transition: 2s;
+
+}
