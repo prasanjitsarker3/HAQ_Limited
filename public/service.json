@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "MANAGEMENT",
+        "tile": "Transport & Logistics",
+        "image": "https://cdn-icons-png.flaticon.com/128/2564/2564794.png",
+        "description": "HR consultants are provides broad menu Working Resource Service"
+    },
+    {
+        "id": "2",
+        "name": "PLANNING",
+        "tile": "Construction",
+        "image": "https://cdn-icons-png.flaticon.com/128/11126/11126282.png",
+        "description": "Improving Resources provides broad menu Human Resource Service"
+    },
+    {
+        "id": "3",
+        "name": "TRAINING",
+        "tile": "Strategic Planning",
+        "image": "https://cdn-icons-png.flaticon.com/128/11517/11517973.png",
+        "description": "Strategic Planning provides broad menu Human Resource Service"
+    },
+    {
+        "id": "4",
+        "name": "MOTIVATION",
+        "tile": "Oil & Gas",
+        "image": "https://cdn-icons-png.flaticon.com/128/3074/3074469.png",
+        "description": "Employee Training are provides broad menu Human Resource Service"
+    },
+    {
+        "id": "5",
+        "name": "STRATEGIC",
+        "tile": "Hospitality",
+        "image": "https://cdn-icons-png.flaticon.com/128/3589/3589787.png",
+        "description": "Compensation Consulting provides broad menu Human Resource Service"
+    },
+    {
+        "id": "5",
+        "name": " CUNSULTING",
+        "tile": "Security Guarding",
+        "image": "https://cdn-icons-png.flaticon.com/128/3797/3797693.png",
+        "description": "Leadership Training provides broad menu Human Resource Service"
+    }
+]

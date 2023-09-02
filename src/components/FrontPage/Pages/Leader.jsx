@@ -5,9 +5,9 @@ import { FaLongArrowAltRight } from 'react-icons/fa';
 const Leader = () => {
     const [leader, setLeader] = useState(false);
     return (
-        <div className={`transition-all  duration-5000 ease-in-out ${leader ? 'bg-blue-500' : 'bg-white'}`}>
-            <div className='grid md:grid-cols-2 py-12 gap-5' onMouseOver={() => setLeader(true)} onMouseLeave={() => setLeader(false)}>
-                <div className='flex justify-center px-7'>
+        <div onMouseOver={() => setLeader(true)} onMouseLeave={() => setLeader(false)}>
+            <div  className={` grid md:grid-cols-2 py-12 gap-5 ${leader ? 'bg-white' : 'bg-white'} transition-all  duration-3000 ease-in-out`} >
+                <div className='flex justify-center px-7'> 
                     <div>
                         <h1 className=' text-2xl'>Our Team</h1>
                         <h1 className=' text-5xl font-semibold primaryColor py-2'>Meet the Leaders</h1>
