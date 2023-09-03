@@ -22,7 +22,7 @@ const Footer = () => {
     ];
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="relative w-full">
+        <footer className="relative w-full bg-[#242B2E] text-white">
             <div className="mx-auto w-full max-w-7xl px-8">
                 <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
                     {SITEMAP.map(({ title, links }, key) => (
@@ -30,13 +30,13 @@ const Footer = () => {
                             <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="mb-4 font-bold uppercase opacity-50"
+                                className="mb-4 font-bold uppercase opacity-50 text-white"
                             >
                                 {title}
                             </Typography>
-                            <ul className="space-y-1">
+                            <ul className="space-y-1 text-white">
                                 {links.map((link, key) => (
-                                    <Typography key={key} as="li" color="blue-gray" className="font-normal">
+                                    <Typography key={key} as="li" color="blue-gray" className="font-normal text-white">
                                         <a
                                             href="#"
                                             className="inline-block py-1 pr-2 transition-transform hover:scale-105"
@@ -49,15 +49,15 @@ const Footer = () => {
                         </div>
                     ))}
                 </div>
-                <div className="flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+                <div className="flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-center lg:gap-5">
                     <Typography
                         variant="small"
-                        className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
+                        className="mb-4 text-center font-normal  md:mb-0"
                     >
                         &copy; {currentYear} <a href="https://material-tailwind.com/">HAO Limited</a>. All
                         Rights Reserved.
                     </Typography>
-                    <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
+                    <div className="flex gap-4  sm:justify-center">
                         <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
                             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path

@@ -36,8 +36,8 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link to="/" className="flex items-center">
-                    About
+                <Link to="/service" className="flex items-center">
+                    Services
                 </Link>
             </Typography>
             <Typography
@@ -46,8 +46,18 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
+                <Link to="/profile" className="flex items-center">
+                    Company Profile
+                </Link>
+            </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="p-1 font-normal"
+            >
                 <a href="#" className="flex items-center">
-                    Service
+                    Choose Us
                 </a>
             </Typography>
             <Typography
@@ -57,7 +67,17 @@ const Header = () => {
                 className="p-1 font-normal"
             >
                 <a href="#" className="flex items-center">
-                    Success
+                    Govt.License
+                </a>
+            </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"  
+                className="p-1 font-normal"
+            >
+                <a href="#" className="flex items-center">
+                    Registration
                 </a>
             </Typography>
         </ul>

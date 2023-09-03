@@ -17,11 +17,10 @@ const Home = () => {
             <HomeAbout></HomeAbout>
             <Leader></Leader>
             <ResourceService></ResourceService>
-            {/* <Choose></Choose> */}
+            {/* <Choose></Choose> */} 
             <SiteCalculation></SiteCalculation>
             <Testimonial></Testimonial>
             <Contract></Contract>
-            <Footer></Footer>
         </div>
     );
 };
