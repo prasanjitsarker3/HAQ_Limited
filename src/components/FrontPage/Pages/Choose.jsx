@@ -1,62 +1,56 @@
+import { Avatar } from '@material-tailwind/react';
 import React from 'react';
 import ScrollCarousel from 'scroll-carousel-react';
+import ChooseTime from '../../CustomComponentPage/ChooseTime';
 
 const Choose = () => {
 
     const chooses = [
         {
             id: 1,
-            name: "Call Center",
-            title: "Call Center Information"
+            name: "Compensation Consulting",
+            title: "Compensation Consulting are always help for a companies marketing, customer growths.",
+            image: "https://cdn-icons-png.flaticon.com/128/1651/1651602.png",
         },
         {
             id: 2,
-            name: "Call Center",
-            title: "Call Center Information"
+            name: "Leadership Training",
+            title: "The Leadership Training are always help for a companies marketing, customer growths.",
+            image: "https://cdn-icons-png.flaticon.com/128/3287/3287033.png"
         },
         {
             id: 3,
-            name: "Call Center",
-            title: "Call Center Information"
-        },
-        {
-            id: 3,
-            name: "Call Center",
-            title: "Call Center Information"
-        },
-        {
-            id: 4,
-            name: "Call Center",
-            title: "Call Center Information"
-        },
-        {
-            id: 5,
-            name: "Call Center",
-            title: "Call Center Information"
-        },
-        {
-            id: 6,
-            name: "Call Center",
-            title: "Call Center Information"
-        },
+            name: "Corporated Programs",
+            title: "The Corporated Programs are always help for a companies marketing, customer growths.",
+            image: "https://cdn-icons-png.flaticon.com/128/4073/4073056.png"
+        }
     ]
     return (
-        <div>
-            <ScrollCarousel
-                autoplay
-                autoplaySpeed={4}
-                speed={7}
-                onReady={() => console.log('I am ready')}
-            >
-                {
-                    chooses.map(data => (
-                        <div key={data.id} className='border p-5'>
-                            <h1>{data.name}</h1>
-                            <h2>{data.title}</h2>
-                        </div>
-                    ))
-                }
-            </ScrollCarousel>
+        <div className='px-12 '>
+            <div>
+                <h1 className='text-center text-4xl font-sans font-semibold  py-5'>Why Choose a Type <span className='primaryColor'>Resources</span></h1>
+                <p className='text-center text-lg pb-5'>We have our special functions are added to a business. We feel that this special function is part of HR its piece of the successful business.</p>
+            </div>
+            <div className='w-full flex py-12'>
+                <div className=' flex justify-center items-center w-3/4 mx-auto px-5'>
+                    <div className=' grid  md:grid-cols-3 gap-3 mx-auto'>
+                        {
+                            chooses.map(item =>
+                                <div key={item.id} className=' shadow-lg rounded-md'>
+                                    <div className='flex justify-center items-center p-3'>
+                                        <img className='bg-white p-3 rounded-md h-[100px] w-[100px] shadow-md' src={item.image} alt="avatar" variant="rounded" />
+                                    </div>
+                                    <h1 className='text-center text-xl py-2 primaryColor'>{item.name}</h1>
+                                    <h1 className='text-center px-1 py-3'>{item.title}</h1>
+                                </div>
+                            )
+                        }
+                    </div>
+                </div>
+                <div className='w-1/4'>
+                    <ChooseTime></ChooseTime>
+                </div>
+            </div>
         </div>
     );
 };
