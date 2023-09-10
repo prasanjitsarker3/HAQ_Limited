@@ -1,9 +1,10 @@
 import { Avatar, Button, Menu, MenuHandler, MenuItem, MenuList } from '@material-tailwind/react'
 import {
     Navbar,
-    MobileNav,
+    Collapse,
     Typography,
     IconButton,
+    
 } from "@material-tailwind/react";
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -11,13 +12,13 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     const [openNav, setOpenNav] = useState(false);
 
-    useEffect(() => {
+    useEffect(() => { 
         window.addEventListener(
             "resize",
             () => window.innerWidth >= 960 && setOpenNav(false)
         );
     }, []);
-    const user = false;
+    const user = true;
     const options = <>
         {
             user ? <Menu>
@@ -47,7 +48,7 @@ const Header = () => {
                 as="li"
                 variant='small'
                 color="blue-gray"
-                className="p-1 font-normal"
+                className="p-1 font-normal" 
             >
                 <Link to="/" className="flex items-center text-base">
                     Home
@@ -169,10 +170,10 @@ const Header = () => {
                     </IconButton>
                 </div>
             </div>
-            <MobileNav open={openNav}>
+            <Collapse open={openNav}>
                 {navList}
-                {options}
-            </MobileNav>
+                {options} 
+            </Collapse>
         </Navbar>
     );
 };

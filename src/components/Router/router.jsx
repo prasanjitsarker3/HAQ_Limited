@@ -6,6 +6,7 @@ import Profile from "../ViewRoutingPage/Profile";
 import Choose from "../FrontPage/Pages/Choose";
 import Login from "../AuthenticationPage/Login";
 import Register from "../AuthenticationPage/Register";
+import CompanyService from "../ViewRoutingPage/CompanyService";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "service",
-                element: <ResourceService></ResourceService>
+                element: <CompanyService></CompanyService>
             },
             {
                 path: "profile",

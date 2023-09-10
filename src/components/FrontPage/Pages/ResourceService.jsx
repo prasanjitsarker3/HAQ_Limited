@@ -1,5 +1,6 @@
 import { Button, Card, CardBody, CardFooter, IconButton, Typography } from '@material-tailwind/react';
 import React, { useEffect, useState } from 'react';
+import ServiceTab from '../../ViewRoutingPage/ServiceTab';
 
 const ResourceService = () => {
     const [service, setService] = useState([]);
@@ -10,17 +11,20 @@ const ResourceService = () => {
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
+    // const tab=true;
     return (
         <div>
+
             <h1 className='text-center py-6 lg:text-4xl text-xl'>Our Company Resource <span className='primaryColor'>Services</span></h1>
 
             <div className='grid md:grid-cols-3 gap-5 pb-12'>
                 {
                     service.map((data, index) =>
                         <Card
+
                             onMouseEnter={() => setHoveredCardIndex(index)}
                             onMouseLeave={() => setHoveredCardIndex(null)}
-                            key={data.id}
+                            key={index}
                             className='mt-6 w-96 mx-auto shadow-sm'
                         >
                             <CardBody>
@@ -32,8 +36,9 @@ const ResourceService = () => {
                                     {data.name}
                                 </Typography>
                                 <Typography variant="h5" color="blue-gray" className="py-2 text-center">
-                                    {data.title}
+                                    {data?.title || ''}
                                 </Typography>
+
                                 <Typography className={`${hoveredCardIndex === index ? "primaryColor" : ""}`}>
                                     {data.description}
                                 </Typography>

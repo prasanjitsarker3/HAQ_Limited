@@ -1,0 +1,92 @@
+{
+    "tabs": [
+        {
+            "id": 1,
+            "name": "TechRecruiters Inc.",
+            "logo_url": "https://img.freepik.com/premium-photo/skilled-cheerful-construction-workers-ready-hard-day-s-workhappy-successful-moment_806833-1251.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=sph",
+            "title": "Leading Technology Staffing Agency",
+            "description": "TechRecruiters Inc. is a leading technology staffing agency specializing in IT and engineering talent recruitment. With a team of highly skilled recruiters, we help companies find the best talent for their tech and engineering needs. Our extensive network and industry expertise ensure that we can match the right candidates with the right positions.",
+            "location": "San Francisco, CA",
+            "category": "manpower",
+            "website": "https://www.techrecruiters.com",
+            "contact_email": "info@techrecruiters.com",
+            "phone": "+1 (123) 456-7890"
+        },
+        {
+            "id": 2,
+            "name": "CreativeStaff Solutions",
+            "logo_url": "https://img.freepik.com/free-photo/bussiness-people-working-team-office_1303-22863.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=sph",
+            "title": "Creative Talent Placement Services",
+            "description": "CreativeStaff Solutions offers creative talent placement services for the design and advertising industries. Our team of experienced recruiters understands the unique needs of creative professionals and works closely with both candidates and clients to ensure the perfect match. Whether you need a graphic designer, copywriter, or marketing expert, we've got you covered.",
+            "location": "New York, NY",
+            "category": "manpower",
+            "website": "https://www.creativestaffsolutions.com",
+            "contact_email": "info@creativestaffsolutions.com",
+            "phone": "+1 (987) 654-3210"
+        },
+        {
+            "id": 3,
+            "category": "visa",
+            "rating": "5",
+            "name": "United States",
+            "image_url": "https://img.freepik.com/free-photo/visa-application-america-arrangement_23-2149117828.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=ais",
+            "company_name": "Visa Processing USA Inc.",
+            "working_title": "US Visa Experts",
+            "about": "We specialize in processing visas for individuals and businesses looking to travel, work, or immigrate to the United States.",
+            "location": "New York, NY",
+            "phone": "+1-123-456-7890",
+            "mail": "info@visaprocessingusa.com"
+        },
+        {
+            "id": 4,
+            "name": "Canada",
+            "category": "visa",
+            "rating": "4.5",
+            "image_url": "https://img.freepik.com/free-photo/visa-application-composition-with-canadian-flag_23-2149117799.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=ais",
+            "company_name": "Visa Processing Canada Inc.",
+            "working_title": "Canadian Visa Services",
+            "about": "Our Canadian Visa Services division assists clients in obtaining visas for travel, work, or immigration to Canada.",
+            "location": "Toronto, ON",
+            "phone": "+1-987-654-3210",
+            "mail": "info@visaprocessingcanada.com"
+        },
+        {
+            "id": 5,
+            "category": "visa",
+            "rating": "5",
+            "name": "United Kingdom",
+            "image_url": "https://img.freepik.com/free-photo/top-view-green-card-application_23-2149601342.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=ais",
+            "company_name": "Visa Processing UK Ltd.",
+            "working_title": "UK Visa Experts",
+            "about": "We provide expert visa processing services for individuals and businesses interested in the United Kingdom.",
+            "location": "London",
+            "phone": "+44-20-1234-5678",
+            "mail": "info@visaprocessinguk.com"
+        },
+        {
+            "id": 6,
+            "name": "HRConsultants Inc.",
+            "category": "consult",
+            "logo_url": "https://img.freepik.com/free-photo/business-people-working-together-table_155003-13050.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=ais",
+            "title": "Expert Human Resources Consultants",
+            "description": "HRConsultants Inc. is a trusted human resources consulting firm specializing in HR strategy, talent management, and workforce development. Our team of experienced HR professionals provides strategic guidance and solutions to help organizations optimize their human capital. We partner with companies of all sizes to enhance their HR processes and drive business success.",
+            "location": "New York, NY",
+            "website": "https://www.hrconsultants.com",
+            "contact_email": "info@hrconsultants.com",
+            "phone": "+1 (123) 456-7890"
+        },
+        {
+            "id": 7,
+            "name": "TalentAdvisors LLC",
+            "category": "consult",
+            "logo_url": "https://img.freepik.com/free-photo/hardworking-positive-professional-workers-discussing-one-issue-documents-office_140725-106038.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=ais",
+            "title": "Strategic Talent Management Experts",
+            "description": "TalentAdvisors LLC is a leading firm in the field of talent management, specializing in providing strategic talent solutions for businesses of all sizes. Our team of seasoned advisors helps organizations build high-performing teams and unlock their full potential. We collaborate with our clients to address talent-related challenges and drive organizational excellence.",
+            "location": "Los Angeles, CA",
+            "website": "https://www.talentadvisors.com",
+            "contact_email": "info@talentadvisors.com",
+            "phone": "+1 (555) 123-4567"
+        }
+        
+    ]
+}
