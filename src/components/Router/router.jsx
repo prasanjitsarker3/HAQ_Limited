@@ -7,6 +7,7 @@ import Choose from "../FrontPage/Pages/Choose";
 import Login from "../AuthenticationPage/Login";
 import Register from "../AuthenticationPage/Register";
 import CompanyService from "../ViewRoutingPage/CompanyService";
+import Candidate from "../BackendRoutingPage/BackendRoutePage/Candidate";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path:"register",
                 element:<Register></Register>
+            },
+            {
+                path:"candidate",
+                element:<Candidate></Candidate>
             }
         ]
     }

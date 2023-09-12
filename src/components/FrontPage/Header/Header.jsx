@@ -4,21 +4,29 @@ import {
     Collapse,
     Typography,
     IconButton,
-    
+
 } from "@material-tailwind/react";
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Header = () => {
+    const { user, userLogOut } = useContext(AuthContext);
     const [openNav, setOpenNav] = useState(false);
-
-    useEffect(() => { 
+    const handleLogOut = () => {
+        userLogOut()
+            .then(() => { })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+    useEffect(() => {
         window.addEventListener(
             "resize",
             () => window.innerWidth >= 960 && setOpenNav(false)
         );
     }, []);
-    const user = true;
+    // const user = false;
     const options = <>
         {
             user ? <Menu>
@@ -30,10 +38,10 @@ const Header = () => {
                         className="p-0.5 cursor-pointer"
                     />
                 </MenuHandler>
-                <MenuList>
-                    <MenuItem>Menu Item 1</MenuItem>
+                <MenuList className=''>
+                    <MenuItem className=''>Menu Item 1</MenuItem>
                     <MenuItem>Menu Item 2</MenuItem>
-                    <MenuItem>Menu Item 3</MenuItem>
+                    <Button onClick={handleLogOut} size="sm" color="blue">Log Out</Button>
                 </MenuList>
             </Menu> :
                 <Link to="/login">
@@ -48,7 +56,7 @@ const Header = () => {
                 as="li"
                 variant='small'
                 color="blue-gray"
-                className="p-1 font-normal" 
+                className="p-1 font-normal"
             >
                 <Link to="/" className="flex items-center text-base">
                     Home
@@ -105,8 +113,10 @@ const Header = () => {
                         <p className=' cursor-pointer text-base'>Registration</p>
                     </MenuHandler>
                     <MenuList>
-                        <MenuItem>Menu Item 1</MenuItem>
-                        <MenuItem>Menu Item 2</MenuItem>
+                        <MenuItem>
+                            <Link to="/candidate"> Registration  Candidate</Link>
+                        </MenuItem>
+                        <MenuItem>Registration Company</MenuItem>
                     </MenuList>
                 </Menu>
             </Typography>
@@ -172,7 +182,7 @@ const Header = () => {
             </div>
             <Collapse open={openNav}>
                 {navList}
-                {options} 
+                {options}
             </Collapse>
         </Navbar>
     );

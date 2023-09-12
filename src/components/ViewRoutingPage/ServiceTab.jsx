@@ -24,7 +24,7 @@ const ServiceTab = () => {
     const { category } = useParams();
     const initialIndex = categories.indexOf(category) > -1 ? categories.indexOf(category) : 2;
     const [tabIndex, setTabIndex] = useState(initialIndex);
-    const manPower = service.filter(data => data.category === "manpower");
+    const manPower = service.filter(data => data.category === "manpower"); 
     const visa = service.filter(data => data.category === "visa");
     const consult = service.filter(data => data.category === "consult");
 
