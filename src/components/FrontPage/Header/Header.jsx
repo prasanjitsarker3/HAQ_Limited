@@ -27,8 +27,16 @@ const Header = () => {
         );
     }, []);
     // const user = false;
-    const options = <>
+    const isAdmin = true;
+    const dashboard = <>
         {
+            isAdmin && <Link to="/dashboard" className='mr-3'>Dashboard</Link>
+        }
+    </>
+    const options = <>
+
+        {
+
             user ? <Menu>
                 <MenuHandler>
                     <Avatar
@@ -116,7 +124,9 @@ const Header = () => {
                         <MenuItem>
                             <Link to="/candidate"> Registration  Candidate</Link>
                         </MenuItem>
-                        <MenuItem>Registration Company</MenuItem>
+                        <MenuItem>
+                            <Link to="/company"> Registration  Candidate</Link>
+                        </MenuItem>
                     </MenuList>
                 </Menu>
             </Typography>
@@ -139,6 +149,7 @@ const Header = () => {
 
                         className="hidden lg:inline-block"
                     >
+                        {dashboard}
                         {options}
                     </h1>
                     <IconButton
@@ -182,6 +193,7 @@ const Header = () => {
             </div>
             <Collapse open={openNav}>
                 {navList}
+                {dashboard}
                 {options}
             </Collapse>
         </Navbar>

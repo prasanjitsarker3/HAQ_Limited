@@ -9,17 +9,20 @@ import {
     Checkbox,
     Button,
 } from "@material-tailwind/react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../Provider/AuthProvider';
 import SocialLogin from './SocialLogin';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext) 
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
     const [eye, setEye] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || "/";
     const handleEyeClick = () => {
         setEye(!eye);
     }
@@ -32,6 +35,7 @@ const Register = () => {
                 setError('')
                 setSuccess("User Login Successfully !")
                 reset();
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setSuccess('')
@@ -80,7 +84,9 @@ const Register = () => {
                                 <Button type='submit' variant="gradient" fullWidth>
                                     Sign Up
                                 </Button>
-                                <Typography variant="small" className="mt-6 flex justify-center">
+                                <p className="text-center text-green-800">{success}</p>
+                                <p className="text-center text-red-700">{error}</p>
+                                <Typography variant="small" className="my-1 flex justify-center">
                                     Already have an account?
                                     <Link to="/login"
                                         as="a"

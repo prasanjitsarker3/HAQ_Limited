@@ -10,7 +10,7 @@ import {
     Button,
 } from "@material-tailwind/react";
 import { FaEye } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../Provider/AuthProvider';
 import SocialLogin from './SocialLogin';
@@ -20,7 +20,9 @@ const Login = () => {
     const [eye, setEye] = useState(false);
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
-
+    const location = useLocation(); 
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || "/";
     const handleEyeClick = () => {
         setEye(!eye);
     }
@@ -33,6 +35,7 @@ const Login = () => {
                 setError('')
                 setSuccess("User Login Successfully !")
                 reset();
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setSuccess('')

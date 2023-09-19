@@ -8,6 +8,10 @@ import Login from "../AuthenticationPage/Login";
 import Register from "../AuthenticationPage/Register";
 import CompanyService from "../ViewRoutingPage/CompanyService";
 import Candidate from "../BackendRoutingPage/BackendRoutePage/Candidate";
+import Dashboard from "../DashboardSection/Dashboard/Dashboard";
+import DashboardLayout from "../Layout/DashboardLayout";
+import AdminInfo from "../DashboardSection/AdminSection/AdminInfo";
+import Company from "../BackendRoutingPage/BackendRoutePage/Company";
 
 const router = createBrowserRouter([
     {
@@ -31,16 +35,31 @@ const router = createBrowserRouter([
                 element: <Choose></Choose>
             },
             {
-               path:"login",
-               element:<Login></Login>
+                path: "login",
+                element: <Login></Login>
             },
             {
-                path:"register",
-                element:<Register></Register>
+                path: "register",
+                element: <Register></Register>
             },
             {
-                path:"candidate",
-                element:<Candidate></Candidate>
+                path: "candidate",
+                element: <Candidate></Candidate>
+            },
+            {
+                path:"company",
+                element:<Company></Company>
+            }
+        ]
+    }
+    ,
+    {
+        path:"/dashboard",
+        element: <DashboardLayout></DashboardLayout>,
+        children:[
+            {
+                path:"admin",
+                element:<AdminInfo/>
             }
         ]
     }

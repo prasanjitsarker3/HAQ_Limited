@@ -15,14 +15,14 @@
     },
     {
         "id": "3",
-        "name": "TRAINING",
+        "name": "TRAINING", 
         "tile": "Strategic Planning",
         "image": "https://cdn-icons-png.flaticon.com/128/11517/11517973.png",
         "description": "Strategic Planning provides broad menu Human Resource Service"
     },
     {
         "id": "4",
-        "name": "MOTIVATION",
+        "name": "MOTIVATION",         
         "tile": "Oil & Gas",
         "image": "https://cdn-icons-png.flaticon.com/128/3074/3074469.png",
         "description": "Employee Training are provides broad menu Human Resource Service"

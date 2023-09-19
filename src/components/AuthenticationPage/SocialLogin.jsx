@@ -1,16 +1,21 @@
 import { Button } from '@material-tailwind/react';
 import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
     const { googleSignUp } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || "/";
     const handleGooGleSign = () => {
         googleSignUp()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+                navigate(from, { replace: true })
             })
-            .catch(error => {
+            .catch(error => { 
                 console.log(error.message);
             })
     }

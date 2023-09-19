@@ -1,9 +1,10 @@
 import React from 'react';
+import CandidateFrom from '../CandidateFrom/CandidateFrom';
 
-const Candidate = () => {
+const Candidate = () => { 
     return (
         <div>
-            <h1>Candidate page</h1>
+            <CandidateFrom></CandidateFrom>
         </div>
     );
 };
