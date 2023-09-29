@@ -7,7 +7,7 @@ import {
 
 } from "@material-tailwind/react";
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Header = () => {
@@ -47,9 +47,14 @@ const Header = () => {
                     />
                 </MenuHandler>
                 <MenuList className=''>
-                    <MenuItem className=''>Menu Item 1</MenuItem>
-                    <MenuItem>Menu Item 2</MenuItem>
-                    <Button onClick={handleLogOut} size="sm" color="blue">Log Out</Button>
+                    {/* <MenuItem className=''>
+                        <Link to="/userProfile">Profile</Link>
+                    </MenuItem> */}
+                    <MenuItem>
+                        <Link to="/application">Application</Link>
+                    </MenuItem>
+                    <MenuItem>
+                        <Button onClick={handleLogOut} size="sm" color="blue">Log Out</Button></MenuItem>
                 </MenuList>
             </Menu> :
                 <Link to="/login">
@@ -64,11 +69,15 @@ const Header = () => {
                 as="li"
                 variant='small'
                 color="blue-gray"
-                className="p-1 font-normal"
+                className="p-1 font-normal text-base"
             >
-                <Link to="/" className="flex items-center text-base">
+                <NavLink to="/" className={({ isActive }) =>
+                    isActive
+                        ? '  bg-primary text-blue-700 cursor-pointer flex items-center text-base'
+                        : '  group hover:bg-primary text-secondary/40 cursor-pointer transition-all flex items-center text-base'
+                } >
                     Home
-                </Link>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -76,9 +85,13 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link to="/service" className="flex items-center text-base">
+                <NavLink to="/service" className={({ isActive }) =>
+                    isActive
+                        ? '  bg-primary text-blue-700 cursor-pointer flex items-center text-base'
+                        : '  group hover:bg-primary text-secondary/40 cursor-pointer transition-all flex items-center text-base'
+                } >
                     Services
-                </Link>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -86,9 +99,13 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link to="/profile" className="flex items-center text-base">
+                <NavLink to="/profile" className={({ isActive }) =>
+                    isActive
+                        ? '  bg-primary text-blue-700 cursor-pointer flex items-center text-base'
+                        : '  group hover:bg-primary text-secondary/40 cursor-pointer transition-all flex items-center text-base'
+                } >
                     Company Profile
-                </Link>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -96,9 +113,13 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link to="/choose" className="flex items-center text-base">
+                <NavLink to="/choose" className={({ isActive }) =>
+                    isActive
+                        ? '  bg-primary text-blue-700 cursor-pointer flex items-center text-base'
+                        : '  group hover:bg-primary text-secondary/40 cursor-pointer transition-all flex items-center text-base'
+                } >
                     Choose Us
-                </Link>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -106,9 +127,13 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <a href="#" className="flex items-center text-base">
+                <NavLink to="/" className={({ isActive }) =>
+                    isActive
+                        ? '  bg-primary text-blue-700 cursor-pointer flex items-center text-base'
+                        : '  group hover:bg-primary text-secondary/40 cursor-pointer transition-all flex items-center text-base'
+                } >
                     Govt.License
-                </a>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -122,10 +147,18 @@ const Header = () => {
                     </MenuHandler>
                     <MenuList>
                         <MenuItem>
-                            <Link to="/candidate"> Registration  Candidate</Link>
+                            <NavLink to="/candidate" className={({ isActive }) =>
+                                isActive
+                                    ? '  bg-primary text-blue-700 cursor-pointer flex items-center text-base'
+                                    : '  group hover:bg-primary text-secondary/40 cursor-pointer transition-all flex items-center text-base'
+                            } > Registration  Candidate</NavLink>
                         </MenuItem>
                         <MenuItem>
-                            <Link to="/company"> Registration  Candidate</Link>
+                            <NavLink to="/company" className={({ isActive }) =>
+                                isActive
+                                    ? '  bg-primary text-blue-700 cursor-pointer flex items-center text-base'
+                                    : '  group hover:bg-primary text-secondary/40 cursor-pointer transition-all flex items-center text-base'
+                            } > Registration  Company</NavLink>
                         </MenuItem>
                     </MenuList>
                 </Menu>

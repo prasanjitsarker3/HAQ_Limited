@@ -2,10 +2,10 @@ import React from 'react';
 import CandidateFrom from '../CandidateFrom/CandidateFrom';
 
 const Candidate = () => { 
-    return (
+    return ( 
         <div>
             <CandidateFrom></CandidateFrom>
-        </div>
+        </div> 
     );
 };
 

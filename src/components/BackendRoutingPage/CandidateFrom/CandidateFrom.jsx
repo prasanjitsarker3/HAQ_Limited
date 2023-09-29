@@ -1,12 +1,35 @@
 import { Button, Input, Option, Select, Textarea, Typography } from '@material-tailwind/react';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { json } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+// const imgHostingToken = import.meta.e/nv.VITE_img_token;
 const CandidateFrom = () => {
+    const {user}=useContext(AuthContext);
     const [country, setCountry] = useState('');
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const onSubmit = data => {
-        console.log(data);
+    // const imgHostingURL = `https://api.imgbb.com/1/upload?expiration=600&key=${imgHostingToken}`
+    const onSubmit = data => { 
+        const candidateData = { 
+            name: data.firstName, secondName: data.secondName,
+            birth: data.birthDate, city: data.city, companyName: data.companyName,
+            country: data.country, degree: data.degree, des: data.description,
+            descriptionPosition: data.descriptionPosition, email:user?.email, uniStart: data.start,
+            uniEnd: data.finished, endExperience: data.finishedPosition, startExperience: data.startPosition,
+            institution: data.institution, occupation: data.occupation, phone: data.phone, photo: data.photo,
+            experienceTile: data.positionTitle, professional: data.professional, profileSummary: data.profile, state: data.state
+        }
+        fetch("http://localhost:5000/candidate", {
+            method: "POST",
+            headers: { 
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(candidateData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
     }
 
 
@@ -79,7 +102,7 @@ const CandidateFrom = () => {
                             {errors.secondName && <p className='pt-1 text-red-500'>Name is required.</p>}
                         </div>
                         <div className=' flex flex-col'>
-                            <Input type='email' size="lg" label="Enter Email"  {...register('email', { required: true })} />
+                            <Input type='email' defaultValue={user?.email} size="lg" label="Enter Email"  {...register('email', { required: true })} />
                             {errors.email && <p className='pt-1 text-red-500'>Email is required.</p>}
                         </div>
                     </div>
@@ -113,7 +136,7 @@ const CandidateFrom = () => {
                         <div className="mb-4 flex flex-col">
                             <label htmlFor="gender" className="block text-gray-700 text-sm mb-1">
                                 Select State:
-                            </label>
+                            </label> 
                             <select
                                 {...register("state", { required: true })}
                                 className="w-full px-3 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300"

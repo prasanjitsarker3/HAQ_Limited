@@ -44,7 +44,7 @@ const Choose = () => {
                                     <h1 className='text-center px-1 py-3'>{item.title}</h1>
                                 </div>
                             )
-                        }
+                        } 
                     </div>
                 </div>
                 <div className='w-1/4'>

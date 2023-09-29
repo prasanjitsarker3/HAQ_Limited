@@ -12,6 +12,10 @@ import Dashboard from "../DashboardSection/Dashboard/Dashboard";
 import DashboardLayout from "../Layout/DashboardLayout";
 import AdminInfo from "../DashboardSection/AdminSection/AdminInfo";
 import Company from "../BackendRoutingPage/BackendRoutePage/Company";
+import UserApplication from "../UserInfoSection/UserApplication";
+import UserProfile from "../UserInfoSection/UserProfile";
+import ApplicationView from "../UserInfoSection/ApplicationView";
+import AllUser from "../DashboardSection/AdminSection/AllUser";
 
 const router = createBrowserRouter([
     {
@@ -47,19 +51,37 @@ const router = createBrowserRouter([
                 element: <Candidate></Candidate>
             },
             {
-                path:"company",
-                element:<Company></Company>
+                path: "company",
+                element: <Company></Company>
+            },
+            {
+                path: "application",
+                element: <UserApplication></UserApplication>
+            },
+            {
+                path: "userProfile",
+                element: <UserProfile></UserProfile>
+            },
+            {
+                path: "viewApplication/:id",
+                element: <ApplicationView />,
+                loader: ({ params: { id } }) => fetch(`http://localhost:5000/candidate/${id}`)
+
             }
         ]
     }
     ,
     {
-        path:"/dashboard",
+        path: "/dashboard",
         element: <DashboardLayout></DashboardLayout>,
-        children:[
+        children: [
             {
-                path:"admin",
-                element:<AdminInfo/>
+                path: "admin",
+                element: <AdminInfo />
+            },
+            {
+                path:"allUser",
+                element:<AllUser/>
             }
         ]
     }

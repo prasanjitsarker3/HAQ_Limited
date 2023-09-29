@@ -16,7 +16,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import SocialLogin from './SocialLogin';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext) 
+    const { createUser, updateUserProfile } = useContext(AuthContext)
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
     const [eye, setEye] = useState(false);
@@ -32,10 +32,27 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                setError('')
-                setSuccess("User Login Successfully !")
-                reset();
-                navigate(from, { replace: true })
+                updateUserProfile(data.name)
+                    .then(() => {
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: "POST",
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json()) 
+                            .then(data => {
+                                if (data.insertedId) {
+                                    setError('')
+                                    setSuccess("User Login Successfully !")
+                                    reset();
+                                    navigate(from, { replace: true })
+                                }
+                            })
+                    })
+
             })
             .catch(error => {
                 setSuccess('')
