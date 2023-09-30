@@ -44,13 +44,13 @@ const AdminSidebar = () => {
                     <ListItemPrefix>
                         <FaUser className="h-5 w-5" />
                     </ListItemPrefix>
-                    <Link to="/dashboard/admin">Candidate</Link>
+                    <Link to="/dashboard/adminCandidate">Candidate</Link>
                 </ListItem>
                 <ListItem className='text-left max-w-[10rem] my-1'> 
                     <ListItemPrefix>
                         <FaBuilding className="h-5 w-5" />
                     </ListItemPrefix>
-                    <Link to="/dashboard/admin">Company</Link>
+                    <Link to="/dashboard/adminCompany">Company</Link>
                 </ListItem>
                 <ListItem className='text-left max-w-[10rem]'>
                     <ListItemPrefix>

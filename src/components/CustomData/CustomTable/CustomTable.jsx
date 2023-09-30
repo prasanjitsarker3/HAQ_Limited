@@ -18,8 +18,11 @@ const CustomTable = (props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
+  // const filteredTableRows = tableRow.filter((item) =>
+  //   item.name.toLowerCase().includes(searchQuery.toLowerCase()) 
+  // );
   const filteredTableRows = tableRow.filter((item) =>
-    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    item.name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -38,13 +41,13 @@ const CustomTable = (props) => {
   return (
     <div>
       <Card className="h-full w-full overflow-scroll">
-        <div className="relative flex w-full max-w-[20rem] py-5">
+        <div className="relative flex w-full max-w-[20rem] pl-5 py-5">
           <Input
             type="text"
             label="Search"
-            value={searchQuery} 
+            value={searchQuery}
             onChange={handleSearchChange}
-            className="pr-20" 
+            className="pr-20"
           />
           <Button
             size="sm"
@@ -57,7 +60,7 @@ const CustomTable = (props) => {
             Search
           </Button>
         </div>
-        <table className="w-full min-w-max table-auto text-left">
+        <table className="w-full min-w-max table-auto text-left pl-5">
           <thead>
             <tr>
               {tableHead.map((head) => (
@@ -76,9 +79,9 @@ const CustomTable = (props) => {
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {currentData.map((item, index) => (
-              <tr key={item.id} className="even:bg-blue-gray-50/50">
+              <tr key={item.id} className="even:bg-blue-gray-50/50 pl-5">
                 {tableHead.map((head, index) => {
                   return head.dataKey ? (
                     <td key={`${head.dataKey}-${item.id}`} className="p-3">

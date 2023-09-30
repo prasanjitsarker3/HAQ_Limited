@@ -16,6 +16,8 @@ import UserApplication from "../UserInfoSection/UserApplication";
 import UserProfile from "../UserInfoSection/UserProfile";
 import ApplicationView from "../UserInfoSection/ApplicationView";
 import AllUser from "../DashboardSection/AdminSection/AllUser";
+import AdminCandidate from "../DashboardSection/AdminSection/AdminCandidate";
+import AdminCompany from "../DashboardSection/AdminSection/AdminCompany";
 
 const router = createBrowserRouter([
     {
@@ -82,6 +84,14 @@ const router = createBrowserRouter([
             {
                 path:"allUser",
                 element:<AllUser/>
+            },
+            {
+                path:"adminCandidate",
+                element:<AdminCandidate/>
+            },
+            {
+                path:"adminCompany",
+                element:<AdminCompany></AdminCompany>
             }
         ]
     }

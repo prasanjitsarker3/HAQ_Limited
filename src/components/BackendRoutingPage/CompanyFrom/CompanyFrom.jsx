@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 const CompanyFrom = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
-        const companyData={email:data.email,companyName:data.companyName, location:data.location, country:data.country, slogan:data.slogan, state:data.state }
+        const companyData={ email:data.email, name:data.companyName, location:data.location, country:data.country, slogan:data.slogan, state:data.state }
         fetch("http://localhost:5000/company", {
             method: "POST",
             headers: {
