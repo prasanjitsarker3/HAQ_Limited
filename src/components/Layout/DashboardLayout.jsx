@@ -13,7 +13,7 @@ const DashboardLayout = () => {
             <div className='mt-4'>
                 <Outlet></Outlet>
             </div>
-
+ 
         </div>
     );
 };
