@@ -6,15 +6,15 @@ import {
     ListItem,
     ListItemPrefix,
     ListItemSuffix,
-    Chip, 
+    Chip,
 } from "@material-tailwind/react";
 // import { Divider } from '@material-tailwind/react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBuilding, FaHome, FaHospitalUser, FaUser, FaUserFriends } from 'react-icons/fa';
-import { HiAnnotation ,HiChatAlt2, HiHome} from "react-icons/hi";
+import { HiAnnotation, HiChatAlt2, HiHome } from "react-icons/hi";
 const AdminSidebar = () => {
     const [open, setOpen] = React.useState(0);
-    const [openAlert, setOpenAlert] = React.useState(true); 
+    const [openAlert, setOpenAlert] = React.useState(true);
 
     const handleOpen = (value) => {
         setOpen(open === value ? 0 : value);
@@ -30,7 +30,7 @@ const AdminSidebar = () => {
                 <ListItem className=' text-left max-w-[10rem] bg-black text-white hover:bg-black hover:text-white'>
                     <ListItemPrefix>
                         {/* <PresentationChartBarIcon className="h-5 w-5" /> */}
-                        <FaHome className="h-5 w-5"/>
+                        <FaHome className="h-5 w-5" />
                     </ListItemPrefix>
                     <Link to="/dashboard/admin">Dashboard</Link>
                 </ListItem>
@@ -46,7 +46,7 @@ const AdminSidebar = () => {
                     </ListItemPrefix>
                     <Link to="/dashboard/adminCandidate">Candidate</Link>
                 </ListItem>
-                <ListItem className='text-left max-w-[10rem] my-1'> 
+                <ListItem className='text-left max-w-[10rem] my-1'>
                     <ListItemPrefix>
                         <FaBuilding className="h-5 w-5" />
                     </ListItemPrefix>
@@ -59,16 +59,24 @@ const AdminSidebar = () => {
                     <Link to="/dashboard/allUser">All User</Link>
                 </ListItem>
                 <ListItem className='text-left max-w-[10rem] my-1'>
-                    <ListItemPrefix>
-                        <HiAnnotation className="h-5 w-5" />
-                    </ListItemPrefix>
-                    <Link to="/dashboard/admin">Application</Link>
+
+                    {/* <Link to="/dashboard/adminBlogPost">Blog Post</Link> */}
+                    <NavLink to="/dashboard/adminBlogPost" className={({ isActive }) =>
+                        isActive
+                            ? 'text-blue-700 font-bold'
+                            : ''
+                    } >
+                        <ListItemPrefix className=' flex gap-3 w-full'>
+                            <HiAnnotation className="h-5 w-5" />
+                            <Typography>Blog Post</Typography>
+                        </ListItemPrefix>
+                    </NavLink>
                 </ListItem>
                 <ListItem className='text-left max-w-[10rem] my-1'>
                     <ListItemPrefix>
                         <HiChatAlt2 className="h-5 w-5" />
                     </ListItemPrefix>
-                    <Link to="/dashboard/admin">Message</Link>
+                    <Link to="/dashboard/adminMessage">Message</Link>
                 </ListItem>
 
                 <hr className=' border-cyan-600 border-2  max-w-[10rem] rounded-md  inline-block mr-3' />

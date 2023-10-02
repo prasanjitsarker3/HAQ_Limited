@@ -2,8 +2,9 @@ import React from 'react';
 import useAllCandidate from '../../DashboardCustomHook/useAllCandidate';
 import CustomTable from '../../CustomData/CustomTable/CustomTable';
 import { HiCheckCircle, HiMinusSm } from "react-icons/hi";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaTrash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 const AdminCandidate = () => {
     const [allCandidate, isLoading, refetch] = useAllCandidate();
     const navigate = useNavigate();
@@ -19,13 +20,39 @@ const AdminCandidate = () => {
         console.log(id)
         navigate(`/viewApplication/${id}`);
     };
-    const add = (itemId) => {
-        console.log("Clicked", itemId);
-        alert("Add Some Data Client To ");
+    const handleDeleteCandidate = (itemId) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/candidate/${itemId}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+
+                    })
+
+            }
+        })
     };
     const option = [
-        { name: "View", icon: <FaEye />, fun: userView },
-        { name: "Add", icon: <HiMinusSm />, fun: add },
+        { name: "View", icon: <FaEye className=' text-blue-600'/>, fun: userView },
+        { name: "Delete", icon: <FaTrash className=' text-red-600' />, fun: handleDeleteCandidate },
     ];
     return (
         <div className='px-5'>

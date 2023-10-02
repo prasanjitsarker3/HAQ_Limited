@@ -2,6 +2,7 @@
 import { Button, Input, Typography } from '@material-tailwind/react';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const CompanyFrom = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -17,6 +18,16 @@ const CompanyFrom = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if (data.insertedId){
+                    reset()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Item added successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             })
     }
     return (  

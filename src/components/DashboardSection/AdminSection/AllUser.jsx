@@ -6,7 +6,15 @@ import UserTable from '../../CustomData/UserTable/UserTable';
 const AllUser = () => {
     const [allUser, isLoading, refetch] = useAllUser();
     const [selectedImage, setSelectedImage] = useState(null);
+    const [adminUser, setAdminUser] = useState([])
     const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+    useEffect(() => {
+        const newAdminUser = allUser.filter(item => item.role === 'admin');
+        setAdminUser(newAdminUser);
+    }, [allUser]);
+
+    console.log("Admin User", adminUser)
 
     const handleFileSelect = (e) => {
         const selectedFile = e.target.files[0];
@@ -101,7 +109,7 @@ const AllUser = () => {
             </div> */}
 
             <div className=" px-12">
-                <UserTable isOnline={isOnline} allUser={allUser}></UserTable>
+                <UserTable isOnline={isOnline} allUser={allUser} refetch={refetch} adminUser={adminUser}></UserTable>
             </div>
         </div>
     );

@@ -27,7 +27,7 @@ const Contract = () => {
                         <FaEnvelope className='w-10 h-10 text-light-blue-600' />
                         <div className='text-light-blue-600 text-left'>
                             <h1>kholifa123@gmail.com</h1>
-                            <h1>HAOLimited123@gmail.com</h1>
+                            <h1>HAOLimited123@gmail.com</h1> 
                         </div>
                     </div>
 

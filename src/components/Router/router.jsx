@@ -18,6 +18,8 @@ import ApplicationView from "../UserInfoSection/ApplicationView";
 import AllUser from "../DashboardSection/AdminSection/AllUser";
 import AdminCandidate from "../DashboardSection/AdminSection/AdminCandidate";
 import AdminCompany from "../DashboardSection/AdminSection/AdminCompany";
+import AdminMessage from "../DashboardSection/AdminSection/AdminMessage";
+import AdminBlogPost from "../DashboardSection/AdminSection/AdminBlogPost";
 
 const router = createBrowserRouter([
     {
@@ -82,16 +84,25 @@ const router = createBrowserRouter([
                 element: <AdminInfo />
             },
             {
-                path:"allUser",
-                element:<AllUser/>
+                path: "allUser",
+                element: <AllUser />
             },
             {
-                path:"adminCandidate",
-                element:<AdminCandidate/>
+                path: "adminCandidate",
+                element: <AdminCandidate />
             },
             {
-                path:"adminCompany",
-                element:<AdminCompany></AdminCompany>
+                path: "adminCompany",
+                element: <AdminCompany></AdminCompany>
+            }
+            ,
+            {
+                path: "adminMessage",
+                element: <AdminMessage></AdminMessage>
+            },
+            {
+                path:"adminBlogPost",
+                element:<AdminBlogPost/>
             }
         ]
     }

@@ -2,19 +2,21 @@ import { Button, Card, Input, Textarea } from '@material-tailwind/react';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import date from '../../../CustomComponentPage/Date/Date';
 
 const ContractSection = () => {
     const { user } = useContext(AuthContext);
     const { control, handleSubmit, register, formState: { errors } } = useForm();
-
+    const dateTime=date;
+    console.log(dateTime)
     const onSubmit = (data) => {
-        const contractData = { name: data.name, email: data.email, contract: data.contract, subject: data.subject, message: data.message };
-        fetch([], {
+        const contractData = { name: data.name, email:data.email, contract: data.contract, subject: data.subject, message: data.message ,date:dateTime};
+        fetch("http://localhost:5000/message", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
-            },
-            body: JSON.stringify(saveUser)
+            }, 
+            body: JSON.stringify(contractData)
         })
             .then(res => res.json())
             .then((data) => {
