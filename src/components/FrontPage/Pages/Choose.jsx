@@ -31,7 +31,7 @@ const Choose = () => {
                 <h1 className='text-center text-4xl font-sans font-semibold  py-5'>Why Choose a Type <span className='primaryColor'>Resources</span></h1>
                 <p className='text-center text-lg pb-5'>We have our special functions are added to a business. We feel that this special function is part of HR its piece of the successful business.</p>
             </div>
-            <div className='w-full flex py-12'>
+            <div class="w-full md:flex md:flex-row flex-col py-12">
                 <div className=' flex justify-center items-center w-3/4 mx-auto px-5'>
                     <div className=' grid  md:grid-cols-3 gap-3 mx-auto'>
                         {
@@ -47,7 +47,7 @@ const Choose = () => {
                         } 
                     </div>
                 </div>
-                <div className='w-1/4'>
+                <div className='w-full md:w-1/4 md:pt-0 pt-6'>
                     <ChooseTime></ChooseTime>
                 </div>
             </div>

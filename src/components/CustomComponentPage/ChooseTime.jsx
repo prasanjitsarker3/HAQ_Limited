@@ -16,7 +16,7 @@ import { FaHeadphones, FaRProject, FaRegSun } from "react-icons/fa";
 const ChooseTime = () => {
     return (
         <div className="">
-            <Timeline>
+            <Timeline className="w-full ">
                 <TimelineItem className="h-28">
                     <TimelineConnector className="!w-[78px]" />
                     <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">

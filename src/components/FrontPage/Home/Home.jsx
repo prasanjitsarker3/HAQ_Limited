@@ -2,6 +2,7 @@ import Banner from "../Pages/Banner";
 import Choose from "../Pages/Choose";
 import Contract from "../Pages/Contract";
 import Footer from "../Pages/Footer";
+import CareerEvent from "../Pages/FrontPage/CareerEvent";
 import HomeAbout from "../Pages/HomeAbout";
 import Leader from "../Pages/Leader";
 import OurCompany from "../Pages/OurCompany";
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner></Banner>
             {/* <OurCompany></OurCompany> */}
             <HomeAbout></HomeAbout>
+            <CareerEvent></CareerEvent>
             <ResourceService></ResourceService>
             <Leader></Leader>
             <Choose></Choose> 

@@ -10,9 +10,9 @@ const AdminCompany = () => {
     const [allCompany, isLoading, refetch] = useAllCompany();
     const navigate = useNavigate();
     const tableHead = [
-        { name: "Name", dataKey: "name" },
+        { name: "Name", dataKey: "name" }, 
         { name: "Email", dataKey: "email" },
-        { name: "State", dataKey: "state" },
+        { name: "State", dataKey: "state" }, 
         { name: "location", dataKey: "location" },
         { name: "Action", dataKey: null },
     ];
@@ -39,7 +39,7 @@ const AdminCompany = () => {
                     .then(data => {
                         if (data.deletedCount > 0) {
                             refetch();
-                            Swal.fire(
+                            Swal.fire( 
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'

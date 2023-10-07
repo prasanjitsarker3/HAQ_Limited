@@ -20,6 +20,7 @@ import AdminCandidate from "../DashboardSection/AdminSection/AdminCandidate";
 import AdminCompany from "../DashboardSection/AdminSection/AdminCompany";
 import AdminMessage from "../DashboardSection/AdminSection/AdminMessage";
 import AdminBlogPost from "../DashboardSection/AdminSection/AdminBlogPost";
+import ApplyEvent from "../FrontPage/Pages/FrontPage/ApplyEvent";
 
 const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
             {
                 path: "userProfile",
                 element: <UserProfile></UserProfile>
+            },
+            {
+                path:"applyEvent",
+                element:<ApplyEvent></ApplyEvent>
             },
             {
                 path: "viewApplication/:id",
