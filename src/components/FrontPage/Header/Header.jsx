@@ -9,10 +9,16 @@ import {
 import { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useAdmin from '../../DashboardCustomHook/useAdmin';
+
 
 const Header = () => {
-    const { user, userLogOut } = useContext(AuthContext);
+    const { user, userLogOut, loading } = useContext(AuthContext);
     const [openNav, setOpenNav] = useState(false);
+    const [isAdmin,isLoading] = useAdmin(user?.email)
+
+   
+
     const handleLogOut = () => {
         userLogOut()
             .then(() => { })
@@ -26,11 +32,10 @@ const Header = () => {
             () => window.innerWidth >= 960 && setOpenNav(false)
         );
     }, []);
-    // const user = false;
-    const isAdmin = true;
+   
     const dashboard = <>
         {
-            isAdmin && <Link to="/dashboard" className='mr-3'>Dashboard</Link>
+            isAdmin && <Link to="/dashboard/admin" className='mr-3'>Dashboard</Link>
         }
     </>
     const options = <>

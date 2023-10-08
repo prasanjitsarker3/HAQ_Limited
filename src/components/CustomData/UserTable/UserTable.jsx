@@ -16,7 +16,7 @@ import {
     Tooltip,
 } from "@material-tailwind/react";
 import { useState } from "react";
-import { FaSearch, FaTrash, FaUserShield } from "react-icons/fa";
+import { FaSearch, FaTrash, FaTrashAlt, FaUserShield } from "react-icons/fa";
 import date from "../../CustomComponentPage/Date/Date";
 import Swal from "sweetalert2";
 
@@ -73,7 +73,7 @@ const UserTable = ({ isOnline, allUser, refetch, adminUser }) => {
     const handleMakeAdmin = (user) => {
         console.log("user info", user);
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
-            method: 'PATCH'
+            method: 'PUT'
         })
             .then(res => res.json())
             .then(data => {
@@ -208,6 +208,7 @@ const UserTable = ({ isOnline, allUser, refetch, adminUser }) => {
                                                             User
                                                         </Button>
                                                     }
+                                                    {/* {user.role !== "admin" && <Button onClick={() => handleMakeAdmin(user)} className="btn btn-primary">Admin</Button>} */}
                                                 </td>
                                                 <td className={classes}>
                                                     <div className="w-max">
