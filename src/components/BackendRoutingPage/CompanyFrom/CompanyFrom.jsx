@@ -1,13 +1,16 @@
 
 import { Button, Input, Typography } from '@material-tailwind/react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Provider/AuthProvider';
+import date from '../../CustomComponentPage/Date/Date';
 
 const CompanyFrom = () => {
+    const {user}=useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
-        const companyData={ email:data.email, name:data.companyName, location:data.location, country:data.country, slogan:data.slogan, state:data.state }
+        const companyData={ email:user?.email,date:date, name:data.companyName, location:data.location, country:data.country, slogan:data.slogan, state:data.state }
         fetch("http://localhost:5000/company", {
             method: "POST",
             headers: {
@@ -39,7 +42,7 @@ const CompanyFrom = () => {
                 <Typography className=' text-2xl font-serif  font-medium py-3 primaryColor'>Company Information</Typography>
                 <div className=' grid md:grid-cols-3 gap-5'>
                     <div className=' flex flex-col'>
-                        <Input type='email' size="lg" className=' text-lg' label="Enter Email"  {...register('email', { required: true })} />
+                        <Input defaultValue={user?.email} type='email' size="lg" className=' text-lg' label="Enter Email"  {...register('email', { required: true })} />
                         {errors.email && <p className='pt-1 text-red-500'>Email is required.</p>}
                     </div>
                     <div className=' flex flex-col'>

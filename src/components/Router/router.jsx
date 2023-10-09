@@ -21,6 +21,11 @@ import AdminCompany from "../DashboardSection/AdminSection/AdminCompany";
 import AdminMessage from "../DashboardSection/AdminSection/AdminMessage";
 import AdminBlogPost from "../DashboardSection/AdminSection/AdminBlogPost";
 import ApplyEvent from "../FrontPage/Pages/FrontPage/ApplyEvent";
+import CompanyTable from "../UserInfoSection/CompanyTable";
+import CompanyView from "../CustomViewPage/CompanyViewPage";
+import CompanyViewPage from "../CustomViewPage/CompanyViewPage";
+import ViewMessage from "../CustomViewPage/ViewMessage";
+
 
 const router = createBrowserRouter([
     {
@@ -64,6 +69,10 @@ const router = createBrowserRouter([
                 element: <UserApplication></UserApplication>
             },
             {
+                path:"companyInfo",
+                element:<CompanyTable></CompanyTable>
+            },
+            {
                 path: "userProfile",
                 element: <UserProfile></UserProfile>
             },
@@ -76,6 +85,14 @@ const router = createBrowserRouter([
                 element: <ApplicationView />,
                 loader: ({ params: { id } }) => fetch(`http://localhost:5000/candidate/${id}`)
 
+            },
+            {
+                path: "viewCompany/:id",
+                element: <CompanyViewPage />,
+            },
+            {
+                path:"viewMessage/:id",
+                element:<ViewMessage></ViewMessage>
             }
         ]
     }
@@ -108,7 +125,8 @@ const router = createBrowserRouter([
             {
                 path:"adminBlogPost",
                 element:<AdminBlogPost/>
-            }
+            },
+            
         ]
     }
 ])

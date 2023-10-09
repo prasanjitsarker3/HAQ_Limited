@@ -39,7 +39,6 @@ const Header = () => {
         }
     </>
     const options = <>
-
         {
 
             user ? <Menu>
@@ -57,6 +56,9 @@ const Header = () => {
                     </MenuItem> */}
                     <MenuItem>
                         <Link to="/application">Application</Link>
+                    </MenuItem>
+                    <MenuItem>
+                        <Link to="/companyInfo">Company</Link>
                     </MenuItem>
                     <MenuItem>
                         <Button onClick={handleLogOut} size="sm" color="blue">Log Out</Button></MenuItem>

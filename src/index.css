@@ -100,3 +100,39 @@
     background-color: white;
     border-color: white !;
 }
+
+
+.customTableView {
+    font-family: arial, sans-serif;
+    width: 100%;
+}
+
+.customTableView table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.customTableView table td,
+.customTableView table th {
+    border: 1px solid grey;
+    text-align: left;
+    padding: 8px;
+}
+
+.customTableView table td {
+    width: 50%;
+}
+
+.customTableView table tr:nth-child(even) {
+    background-color: #32398F0A;
+}
+
+.customTableView table tr:nth-child(odd) {
+    background-color: white;
+}
+
+.customTableView table th {
+    text-align: center;
+    color: #32398F;
+    background-color: #f2f2f2; /* You can choose a background color for the table header */
+}
