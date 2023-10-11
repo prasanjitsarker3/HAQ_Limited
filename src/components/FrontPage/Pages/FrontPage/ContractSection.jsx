@@ -11,7 +11,7 @@ const ContractSection = () => {
     console.log(dateTime)
     const onSubmit = (data) => {
         const contractData = { name: data.name, email:data.email, contract: data.contract, subject: data.subject, message: data.message ,date:dateTime};
-        fetch("http://localhost:5000/message", {
+        fetch("https://hqa-server-prasanjitsarker3.vercel.app/message", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

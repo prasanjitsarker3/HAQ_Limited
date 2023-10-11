@@ -34,12 +34,7 @@ const AdminSidebar = () => {
                     </ListItemPrefix>
                     <Link to="/dashboard/admin">Dashboard</Link>
                 </ListItem>
-                <ListItem className='text-left max-w-[10rem] my-1'>
-                    <ListItemPrefix>
-                        <FaHospitalUser className="h-5 w-5" />
-                    </ListItemPrefix>
-                    <Link to="/dashboard/admin">Panel User</Link>
-                </ListItem>
+                
                 <ListItem className='text-left max-w-[10rem]'>
                     <ListItemPrefix>
                         <FaUser className="h-5 w-5" />

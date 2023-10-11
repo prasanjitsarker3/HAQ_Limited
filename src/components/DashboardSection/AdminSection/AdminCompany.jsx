@@ -10,16 +10,16 @@ const AdminCompany = () => {
     const [allCompany, isLoading, refetch] = useAllCompany();
     const navigate = useNavigate();
     const tableHead = [
-        { name: "Name", dataKey: "name" }, 
+        { name: "Name", dataKey: "name" },
         { name: "Email", dataKey: "email" },
-        { name: "State", dataKey: "state" }, 
+        { name: "State", dataKey: "state" },
         { name: "location", dataKey: "location" },
         { name: "Action", dataKey: null },
     ];
 
     const userView = (id) => {
         console.log(id)
-        navigate(`/viewCompany/${id}`);
+        navigate(`/dashboard/viewAdminCompany/${id}`);
     };
     const handleDeleteCompany = (itemId) => {
         Swal.fire({
@@ -32,25 +32,25 @@ const AdminCompany = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/company/${itemId}`, {
+                fetch(`https://hqa-server-prasanjitsarker3.vercel.app/company/${itemId}`, {
                     method: 'DELETE'
                 })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire( 
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            )
-                        }
-
+                    .then((response) => {
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        );
                     })
-
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        // Handle network errors or other exceptions here
+                    });
             }
-        })
+        });
     };
+
     const option = [
         { name: "View", icon: <FaEye className=' text-blue-600' />, fun: userView },
         { name: "Delete", icon: <FaTrash className=' text-red-600' />, fun: handleDeleteCompany },

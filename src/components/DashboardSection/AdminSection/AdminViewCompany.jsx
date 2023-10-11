@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CustomViewTable from '../CusromTable/CustomViewTable';
+import CustomViewTable from '../../CusromTable/CustomViewTable';
 
-
-const CompanyViewPage = () => {
+const AdminViewCompany = () => {
     const [data, setData] = useState([]);
     const [company, setCompany] = useState(null); // Initialize as null, not an empty array
     const { id } = useParams();
@@ -18,7 +17,7 @@ const CompanyViewPage = () => {
     useEffect(() => {
         if (data.length > 0 && id) { // Check if data is not empty and id is valid
             const foundCompany = data.find((item) => item._id === id);
-            console.log("Company Data",foundCompany)
+            console.log("Company Data", foundCompany)
             const info = [
                 { key: "Company", value: foundCompany.name },
                 { key: "Country", value: foundCompany.country },
@@ -47,4 +46,4 @@ const CompanyViewPage = () => {
     );
 };
 
-export default CompanyViewPage;
+export default AdminViewCompany;

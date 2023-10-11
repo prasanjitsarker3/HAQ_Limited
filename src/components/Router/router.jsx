@@ -25,6 +25,8 @@ import CompanyTable from "../UserInfoSection/CompanyTable";
 import CompanyView from "../CustomViewPage/CompanyViewPage";
 import CompanyViewPage from "../CustomViewPage/CompanyViewPage";
 import ViewMessage from "../CustomViewPage/ViewMessage";
+import AdminViewAppliation from "../DashboardSection/AdminSection/AdminViewAppliation";
+import AdminViewCompany from "../DashboardSection/AdminSection/AdminViewCompany";
 
 
 const router = createBrowserRouter([
@@ -69,21 +71,21 @@ const router = createBrowserRouter([
                 element: <UserApplication></UserApplication>
             },
             {
-                path:"companyInfo",
-                element:<CompanyTable></CompanyTable>
+                path: "companyInfo",
+                element: <CompanyTable></CompanyTable>
             },
             {
                 path: "userProfile",
                 element: <UserProfile></UserProfile>
             },
             {
-                path:"applyEvent",
-                element:<ApplyEvent></ApplyEvent>
+                path: "applyEvent",
+                element: <ApplyEvent></ApplyEvent>
             },
             {
                 path: "viewApplication/:id",
                 element: <ApplicationView />,
-                loader: ({ params: { id } }) => fetch(`http://localhost:5000/candidate/${id}`)
+                loader: ({ params: { id } }) => fetch(`https://hqa-server-prasanjitsarker3.vercel.app/candidate/${id}`)
 
             },
             {
@@ -91,8 +93,8 @@ const router = createBrowserRouter([
                 element: <CompanyViewPage />,
             },
             {
-                path:"viewMessage/:id",
-                element:<ViewMessage></ViewMessage>
+                path: "viewMessage/:id",
+                element: <ViewMessage></ViewMessage>
             }
         ]
     }
@@ -123,10 +125,22 @@ const router = createBrowserRouter([
                 element: <AdminMessage></AdminMessage>
             },
             {
-                path:"adminBlogPost",
-                element:<AdminBlogPost/>
+                path: "adminBlogPost",
+                element: <AdminBlogPost />
             },
-            
+            {
+                path: "viewAdminApplication/:id",
+                element: <AdminViewAppliation></AdminViewAppliation>
+            },
+            {
+                path: "viewAdminCompany/:id",
+                element: <AdminViewCompany></AdminViewCompany>
+            },
+            {
+                path: "viewMessage/:id",
+                element: <ViewMessage></ViewMessage>
+            }
+
         ]
     }
 ])

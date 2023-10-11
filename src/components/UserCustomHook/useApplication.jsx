@@ -8,10 +8,11 @@ const useApplication = () => {
    const { data: applications = [], isLoading, refetch } = useQuery({ 
       queryKey: ['candidate', user?.email],
       queryFn: async () => {
-         const res = await axios.get(`http://localhost:5000/candidate/${user?.email}`);
+         const res = await axios.get(`https://hqa-server-prasanjitsarker3.vercel.app/candidate/${user?.email}`);
          return res.data;
       }
    });
+   console.log("Application:", applications);
    return [applications, isLoading, refetch];
 };
 

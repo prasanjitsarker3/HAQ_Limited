@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CustomViewTable from '../CusromTable/CustomViewTable';
+import CustomViewTable from '../../CusromTable/CustomViewTable';
 
-const ApplicationView = () => {
+const AdminViewAppliation = () => {
     const [data, setData] = useState([]);
     const [application, setApplication] = useState(null); // Initialize as null, not an empty array
     const { id } = useParams();
@@ -40,7 +40,7 @@ const ApplicationView = () => {
                 { key: "Experience End", value: foundApplication.endExperience },
                 { key: "Professional", value: foundApplication.professional },
             ]
-            setApplication({info, education, career}); // Set the found application object
+            setApplication({ info, education, career }); // Set the found application object
         }
     }, [data, id]);
 
@@ -62,7 +62,7 @@ const ApplicationView = () => {
                 />
             </div>
         </div>
-    );
+    )
 };
 
-export default ApplicationView;
+export default AdminViewAppliation;

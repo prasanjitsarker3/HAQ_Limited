@@ -1,13 +1,14 @@
 import React from 'react';
 
+
 const Dashboard = () => {
     return (
         <div>
             <div>
-                <h1>Dashboard Information</h1>
+           
             </div>
             <div>
-              
+
             </div>
         </div>
     );

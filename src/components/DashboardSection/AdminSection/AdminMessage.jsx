@@ -20,7 +20,7 @@ const AdminMessage = () => {
     ];
 
     const userView = (id) => {
-        navigate(`/viewMessage/${id}`);
+        navigate(`/dashboard/viewMessage/${id}`);
     };
     const handleDeletedMessage = (itemId) => {
         Swal.fire({
@@ -33,7 +33,7 @@ const AdminMessage = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/message/${itemId}`, {
+                fetch(`https://hqa-server-prasanjitsarker3.vercel.app/message/${itemId}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

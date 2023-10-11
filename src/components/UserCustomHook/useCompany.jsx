@@ -8,7 +8,7 @@ const useCompany = () => {
     const { data: company = [], isLoading, refetch } = useQuery({
         queryKey: ['company', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/company/${user?.email}`);
+            const res = await axios.get(`https://hqa-server-prasanjitsarker3.vercel.app/company/${user?.email}`);
             console.log("Company Data", res.data)
             return res.data;
         }
