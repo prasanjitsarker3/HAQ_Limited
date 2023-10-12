@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CustomViewTable from '../CusromTable/CustomViewTable';
+import Loading from '../CustomLoading/Loading';
 
 const ViewMessage = () => {
     const [data, setData] = useState([]);
     const [application, setApplication] = useState(null); // Initialize as null, not an empty array
     const { id } = useParams();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true)
         fetch('https://hqa-server-prasanjitsarker3.vercel.app/message')
             .then((res) => res.json())
             .then((data) => setData(data));
@@ -26,21 +29,28 @@ const ViewMessage = () => {
                 { key: "Message", value: foundMessage.message },
             ]
 
-            setApplication({ info, message }); // Set the found application object
+            setApplication({ info, message });
+            setLoading(false) // Set the found application object
         }
     }, [data, id]);
 
     return (
-        <div className='grid md:grid-cols-2 py-12 px-12 gap-5'>
-            <CustomViewTable
-                tableHead={"Personal Information"}
-                data={application ? application.info : []} // Add a null check for company
-            />
-            <CustomViewTable
-                tableHead={"Additional Information"} // Corrected the table head
-                data={application ? application.message : []} // Add a null check for company
-            />
-        </div>
+        <>
+            {
+                loading ? <Loading /> :
+                    <div className='grid md:grid-cols-2 py-12 px-12 gap-5'>
+                        <CustomViewTable
+                            tableHead={"Personal Information"}
+                            data={application ? application.info : []} // Add a null check for company
+                        />
+                        <CustomViewTable
+                            tableHead={"Additional Information"} // Corrected the table head
+                            data={application ? application.message : []} // Add a null check for company
+                        />
+                    </div>
+            }
+
+        </>
     );
 };
 

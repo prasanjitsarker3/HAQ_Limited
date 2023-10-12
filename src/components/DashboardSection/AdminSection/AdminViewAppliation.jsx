@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CustomViewTable from '../../CusromTable/CustomViewTable';
+import Loading from '../../CustomLoading/Loading';
 
 const AdminViewAppliation = () => {
     const [data, setData] = useState([]);
     const [application, setApplication] = useState(null); // Initialize as null, not an empty array
     const { id } = useParams();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true)
         fetch('https://hqa-server-prasanjitsarker3.vercel.app/candidate')
             .then((res) => res.json())
             .then((data) => setData(data));
@@ -40,27 +43,32 @@ const AdminViewAppliation = () => {
                 { key: "Experience End", value: foundApplication.endExperience },
                 { key: "Professional", value: foundApplication.professional },
             ]
-            setApplication({ info, education, career }); // Set the found application object
+            setApplication({ info, education, career });
+            setLoading(false) // Set the found application object
         }
     }, [data, id]);
 
     return (
         <div>
-            <div className='grid md:grid-cols-3 gap-6 py-12 px-12  '>
+            {
+                loading ? <Loading /> :
+                    <div className='grid md:grid-cols-3 gap-6 py-12 px-12  '>
 
-                <CustomViewTable
-                    tableHead={"Personal Information"}
-                    data={application ? application.info : []} // Add a null check for company
-                />
-                <CustomViewTable
-                    tableHead={"Eduction Information"} // Corrected the table head
-                    data={application ? application.education : []} // Add a null check for company
-                />
-                <CustomViewTable
-                    tableHead={"Career Information"} // Corrected the table head
-                    data={application ? application.career : []} // Add a null check for company
-                />
-            </div>
+                        <CustomViewTable
+                            tableHead={"Personal Information"}
+                            data={application ? application.info : []} // Add a null check for company
+                        />
+                        <CustomViewTable
+                            tableHead={"Eduction Information"} // Corrected the table head
+                            data={application ? application.education : []} // Add a null check for company
+                        />
+                        <CustomViewTable
+                            tableHead={"Career Information"} // Corrected the table head
+                            data={application ? application.career : []} // Add a null check for company
+                        />
+                    </div>
+            }
+
         </div>
     )
 };

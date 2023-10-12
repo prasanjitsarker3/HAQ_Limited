@@ -32,7 +32,7 @@ const Choose = () => {
                 <p className='text-center text-lg pb-5'>We have our special functions are added to a business. We feel that this special function is part of HR its piece of the successful business.</p>
             </div>
             <div class="w-full md:flex md:flex-row flex-col py-12">
-                <div className=' flex justify-center items-center w-3/4 mx-auto px-5'>
+                <div className=' flex justify-center items-center md:w-3/4 mx-auto md:px-5'>
                     <div className=' grid  md:grid-cols-3 gap-3 mx-auto'>
                         {
                             chooses.map(item =>

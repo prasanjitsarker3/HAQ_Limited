@@ -6,6 +6,7 @@ import { HiCheckCircle, HiMinusSm } from "react-icons/hi";
 import { FaEye, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
+import Loading from '../../CustomLoading/Loading';
 
 const AdminMessage = () => {
     const [allMessage, isLoading, refetch] = useAllMessage();
@@ -57,12 +58,16 @@ const AdminMessage = () => {
     ];
     return (
         <div className='px-5'>
-            <CustomTable
-                tableHead={tableHead}
-                tableRow={allMessage}
-                option={option}
-            >
-            </CustomTable>
+            {
+                isLoading ? <Loading /> : 
+                    <CustomTable
+                        tableHead={tableHead}
+                        tableRow={allMessage}
+                        option={option}
+                    >
+                    </CustomTable>
+            }
+
         </div>
     );
 };

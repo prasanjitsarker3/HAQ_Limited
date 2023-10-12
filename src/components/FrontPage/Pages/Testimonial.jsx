@@ -41,7 +41,7 @@ const Testimonial = () => {
         },
     ];
     return (
-        <div>
+        <div className=''>
             <div className='py-5'>
                 <h1 className='primaryColor text-4xl text-center'>Testimonial</h1>
                 <h2 className='text-center text-2xl pt-3 primaryColor font-bold'>" <span className='text-black font-normal'>What Our Customers Are Saying</span> "</h2>
@@ -65,7 +65,7 @@ const Testimonial = () => {
 
                 {
                     testimonials.map(test =>
-                        <SwiperSlide className='md:px-32'>
+                        <SwiperSlide className='md:px-32 '>
                             <div className='grid md:grid-cols-2  p-5 py-10 bg-[#1FAA59]'>
                                 <div className='flex justify-center px-5'>
                                     <img

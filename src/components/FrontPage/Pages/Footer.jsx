@@ -1,79 +1,95 @@
 import { Button, Typography } from '@material-tailwind/react';
 import React from 'react';
+import { FaAngleRight, FaHome, FaLocationArrow, FaMailBulk, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    const LINKS = [
-        {
-            title: "Product",
-            items: ["Overview", "Features", "Solutions", "Tutorials"],
-        },
-        {
-            title: "Company",
-            items: ["About us", "Careers", "Press", "News"],
-        },
-        {
-            title: "Resource",
-            items: ["Blog", "Newsletter", "Events", "Help center"],
-        },
-        {
-            title: "Resource",
-            items: ["Blog", "Newsletter", "Events", "Help center"],
-        },
-    ];
+
 
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="relative w-full">
-            <div className="mx-auto w-full px-8 bg-blue-gray-50 p-3">
+        <footer className="relative w-full pb-5">
+            <div className="mx-auto w-full px-8 bg-black p-3 text-white ">
                 <div className=" md:flex md:flex-row flex-col justify-center w-full">
-                    <div className="grid md:grid-cols-4  gap-4 md:w-[70%] w-[100%]">
-                        {LINKS.map(({ title, items }) => (
-                            <ul key={title} className="flex  flex-grow-0 md:flex-col justify-start md:gap-0 gap-3">
-                                <Typography variant="h6" className="text-left md:mt-0 mt-2">
-                                    {title}
-                                </Typography>
-                                {items.map((link) => (
-                                    <h1 key={link} className="flex">
-                                        <Typography
-                                            as="a"
-                                            href="#"
-                                            color="gray"
-                                            className="py-1.5 font-normal transition-colors hover:text-blue-gray-900 text-left"
-                                        >
-                                            {link}
-                                        </Typography>
-                                    </h1>
-                                ))}
-                            </ul>
-
-                        ))}
-                    </div>
-                    <div className=' w-[100%] md:w-[30%] md:py-0 py-5'>
-                        <Typography variant="h5" className="mb-6 text-center">
-                            Career Option
-                        </Typography>
-                        <div className=' border shadow-2xl p-3'>
-                            <h1 className=' text-center text-lg py-3'>Find Your Smile In Here</h1>
-                            <div className=' flex justify-center'>
-                                <Link to="/applyEvent">
-                                    <Button color="blue">Apply Now</Button>
-                                </Link>
+                    <div className=' grid md:grid-cols-4 gap-5 py-3'>
+                        <div>
+                            <div className=' flex justify-start items-center pb-4'>
+                                <h1 className=' text-2xl colorPrimary font-bold'>HQA LImited</h1>
+                                <h1 className='text-2xl colorPrimary font-semibold '>Agency</h1>
+                            </div>
+                            <h1 className='text-md text-white'>Career Agency
+                                A career-related theme that is truly multi-purpose, designed to meet all your career agency needs.
+                                The barrage of shortcodes that works in the pages makes it the better choice for your business.
+                            </h1>
+                            <h1 className='text-xl font-semibold'>STAY CONNECTED</h1>
+                        </div>
+                        <div className=' space-y-2'>
+                            <h1 className='text-xl'>Useful Links</h1>
+                            <div className="group flex justify-start items-center gap-1 transition-transform translate-x-0 group-hover:translate-x-6">
+                                <FaAngleRight />
+                                <h1 className='text-md'>Home</h1>
+                            </div>
+                            <div className=' flex justify-start items-center gap-1'>
+                                <FaAngleRight />
+                                <h1 className='text-md'>About Us</h1>
+                            </div>
+                            <div className=' flex justify-start items-center gap-1'>
+                                <FaAngleRight />
+                                <h1 className='text-md'>Careers</h1>
+                            </div>
+                            <div className=' flex justify-start items-center gap-1'>
+                                <FaAngleRight />
+                                <h1 className='text-md'>Contact Us</h1>
+                            </div>
+                            <div className=' flex justify-start items-center gap-1'>
+                                <FaAngleRight />
+                                <h1 className='text-md'>Company News</h1>
+                            </div>
+                            <div className=' flex justify-start items-center gap-1'>
+                                <FaAngleRight />
+                                <h1 className='text-md'>Legal Support</h1>
+                            </div>
+                        </div> 
+                        <div className=' space-y-3'>
+                            <h1 className=' text-xl'>Contract Us</h1>
+                            <div className=' flex justify-start items-center gap-2'>
+                                <FaHome className=' w-6 h-6' />
+                                <h1 className=' text-md '>New Badda Road, Dhaka-Bangladesh</h1>
+                            </div>
+                            <div className=' flex justify-start items-center gap-2'>
+                                <FaLocationArrow className=' w-6 h-6' />
+                                <h1 className=' text-md '>Badda 12, Dhaka-Bangladesh</h1>
+                            </div>
+                            <div className=' flex justify-start items-center gap-2'>
+                                <FaPhone className=' w-6 h-6' />
+                                <h1 className=' text-md '>+8801786756747856</h1>
+                            </div>
+                            <div className=' flex justify-start items-center gap-2'>
+                                <FaMailBulk className=' w-6 h-6' />
+                                <h1 className=' text-md'>hqalimited123@gmail.com</h1>
                             </div>
                         </div>
+                        <div>
+                            <h1 className=' text-xl font-semibold md:text-center pb-5'>Career Option</h1>
+
+                            <div className='flex-col bg-blue-gray-600 bg-opacity-20 backdrop-blur-md p-5 flex justify-center rounded shadow-lg'>
+                                <h1 className='py-3 text-center'>Find Your Smile In Here </h1>
+                                <Button color='blue'>Apply Now</Button>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
-
-
-                <div className="mt-6 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-center md:gap-10">
+                <div className="flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-center gap-12">
                     <Typography
                         variant="small"
-                        className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
+                        className="mb-4 text-center font-normal text-white md:mb-0"
                     >
                         &copy; {currentYear} <a href="https://material-tailwind.com/">Material Tailwind</a>. All
                         Rights Reserved.
                     </Typography>
-                    <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
+                    <div className="flex gap-4 text-white sm:justify-center">
                         <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
                             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
@@ -117,6 +133,7 @@ const Footer = () => {
                         </Typography>
                     </div>
                 </div>
+
             </div>
         </footer>
     );

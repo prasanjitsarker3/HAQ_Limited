@@ -5,6 +5,7 @@ import { HiCheckCircle, HiMinusSm } from "react-icons/hi";
 import { FaEye, FaTrash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import Loading from '../../CustomLoading/Loading';
 const AdminCandidate = () => {
     const [allCandidate, isLoading, refetch] = useAllCandidate();
     const navigate = useNavigate();
@@ -50,16 +51,20 @@ const AdminCandidate = () => {
         })
     };
     const option = [
-        { name: "View", icon: <FaEye className=' text-blue-600'/>, fun: userView },
+        { name: "View", icon: <FaEye className=' text-blue-600' />, fun: userView },
         { name: "Delete", icon: <FaTrash className=' text-red-600' />, fun: handleDeleteCandidate },
     ];
+
     return (
         <div className='px-5'>
-            <CustomTable className="px-2"
-                tableHead={tableHead}
-                tableRow={allCandidate}
-                option={option}
-            ></CustomTable>
+            {
+                isLoading ? <Loading /> :
+                    <CustomTable className="px-2"
+                        tableHead={tableHead}
+                        tableRow={allCandidate}
+                        option={option}
+                    ></CustomTable>
+            }
         </div>
     );
 };

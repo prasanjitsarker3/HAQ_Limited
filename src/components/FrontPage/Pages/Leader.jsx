@@ -9,8 +9,8 @@ const Leader = () => {
             <div  className={` grid md:grid-cols-2 py-12 gap-5 ${leader ? 'bg-white' : 'bg-white'} transition-all  duration-3000 ease-in-out`} >
                 <div className='flex justify-center px-7'> 
                     <div>
-                        <h1 className=' text-2xl'>Our Team</h1>
-                        <h1 className=' text-5xl font-semibold primaryColor py-2'>Meet the Leaders</h1>
+                        <h1 className=' text-2xl md:text-left text-center'>Our Team</h1>
+                        <h1 className=' text-5xl font-semibold primaryColor py-2 md:text-left text-center'>Meet the Leaders</h1>
                         <p className=' text-lg'>It takes dedicated, capable, and experienced leaders to ensure MUNSHI stays a global leader in workforce service for many years to come. We are confident we have the right team in place to continue positive growth of the company.</p>
                         <div className='py-3 flex'>
                             <Button color="amber" className='text-white py-3 flex justify-center items-center gap-3'><span>Our Team</span><FaLongArrowAltRight /></Button>

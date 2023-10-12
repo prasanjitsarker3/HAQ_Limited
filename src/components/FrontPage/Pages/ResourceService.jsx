@@ -7,6 +7,8 @@ import {
 } from '@material-tailwind/react';
 import React, { useEffect, useState } from 'react';
 import ServiceTab from '../../ViewRoutingPage/ServiceTab';
+import { FaRightFromBracket } from 'react-icons/fa6';
+import { FaCheck, FaTimes } from 'react-icons/fa';
 
 const ResourceService = () => {
     const [open, setOpen] = useState(false);
@@ -78,7 +80,7 @@ const ResourceService = () => {
                 )}
             </div>
 
-            <Dialog
+            <Dialog className=''
                 open={open}
                 onClose={() => setOpen(false)} // Close the modal when the user clicks outside or presses Escape
                 animate={{
@@ -94,21 +96,21 @@ const ResourceService = () => {
                     getting started. I'm up to something. Fan luv.
                 </DialogBody>
                 <DialogFooter>
-                    <Button
-                        variant="text"
-                        color="red"
+                    <IconButton
+                        
                         onClick={() => setOpen(false)} // Close the modal on Cancel
-                        className="mr-1"
+                        className="mr-1 rounded-full  bg-[#ea4335] text-white"
                     >
-                        <span>Cancel</span>
-                    </Button>
-                    <Button
+                        <FaTimes/>
+                    </IconButton>
+                    <IconButton
+                        className=' rounded-full'
                         variant="gradient"
                         color="green"
                         onClick={() => setOpen(false)} // Close the modal on Confirm
                     >
-                        <span>Confirm</span>
-                    </Button>
+                        <FaCheck />
+                    </IconButton>
                 </DialogFooter>
             </Dialog>
         </div>

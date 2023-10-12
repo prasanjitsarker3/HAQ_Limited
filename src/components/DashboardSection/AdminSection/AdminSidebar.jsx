@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 // import { Divider } from '@material-tailwind/react';
 import { Link, NavLink } from 'react-router-dom';
-import { FaBuilding, FaHome, FaHospitalUser, FaUser, FaUserFriends } from 'react-icons/fa';
+import { FaBuilding, FaFileVideo, FaHome, FaHospitalUser, FaUser, FaUserFriends } from 'react-icons/fa';
 import { HiAnnotation, HiChatAlt2, HiHome } from "react-icons/hi";
 const AdminSidebar = () => {
     const [open, setOpen] = React.useState(0);
@@ -72,6 +72,12 @@ const AdminSidebar = () => {
                         <HiChatAlt2 className="h-5 w-5" />
                     </ListItemPrefix>
                     <Link to="/dashboard/adminMessage">Message</Link>
+                </ListItem>
+                <ListItem className='text-left max-w-[10rem] my-1'>
+                    <ListItemPrefix>
+                        <FaFileVideo className="h-5 w-5" />
+                    </ListItemPrefix>
+                    <Link to="/dashboard/adminMessage">Add Video</Link>
                 </ListItem>
 
                 <hr className=' border-cyan-600 border-2  max-w-[10rem] rounded-md  inline-block mr-3' />

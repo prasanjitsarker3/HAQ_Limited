@@ -105,11 +105,13 @@
 .customTableView {
     font-family: arial, sans-serif;
     width: 100%;
+    height: 100%;
 }
 
 .customTableView table {
     border-collapse: collapse;
     width: 100%;
+    height: 100%;
 }
 
 .customTableView table td,

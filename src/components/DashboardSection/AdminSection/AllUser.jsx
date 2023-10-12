@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useAllUser from '../../DashboardCustomHook/useAllUser';
 import { Input, Typography } from '@material-tailwind/react';
 import UserTable from '../../CustomData/UserTable/UserTable';
+import Loading from '../../CustomLoading/Loading';
 
 const AllUser = () => {
     const [allUser, isLoading, refetch] = useAllUser();
@@ -39,55 +40,7 @@ const AllUser = () => {
             window.removeEventListener("offline", handleOnlineStatusChange);
         };
     }, []);
-    const allUsers = [
-        {
-            img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
-            name: "John Michael",
-            email: "john@creative-tim.com",
-            job: "Manager",
-            org: "Organization",
 
-            date: "23/04/18",
-            role: "user",
-        },
-        {
-            img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
-            name: "Alexa Liras",
-            email: "alexa@creative-tim.com",
-            job: "Programator",
-            org: "Developer",
-            online: false,
-            date: "23/04/18",
-            role: "user",
-        },
-        {
-            img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
-            name: "Laurent Perrier",
-            email: "laurent@creative-tim.com",
-            job: "Executive",
-            org: "Projects",
-            online: false,
-            date: "19/09/17",
-        },
-        {
-            img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
-            name: "Michael Levi",
-            email: "michael@creative-tim.com",
-            job: "Programator",
-            org: "Developer",
-
-            date: "24/12/08",
-        },
-        {
-            img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
-            name: "Michael Levi",
-            email: "michael@creative-tim.com",
-            job: "Programator",
-            org: "Developer",
-
-            date: "24/12/08",
-        },
-    ];
     return (
         <div>
             {/* <div className=" py-5 pl-5">
@@ -107,10 +60,13 @@ const AllUser = () => {
                     />
                 )}
             </div> */}
+            {
+                isLoading ? <Loading /> :
+                    <div className=" px-12">
+                        <UserTable isOnline={isOnline} allUser={allUser} refetch={refetch} adminUser={adminUser}></UserTable>
+                    </div>
+            }
 
-            <div className=" px-12">
-                <UserTable isOnline={isOnline} allUser={allUser} refetch={refetch} adminUser={adminUser}></UserTable>
-            </div>
         </div>
     );
 };
