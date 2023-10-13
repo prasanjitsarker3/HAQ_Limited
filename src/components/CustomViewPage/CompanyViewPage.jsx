@@ -10,7 +10,7 @@ const CompanyViewPage = () => {
     console.log("Id", id);
 
     useEffect(() => {
-        fetch('https://hqa-server-prasanjitsarker3.vercel.app/company')
+        fetch('http://localhost:5000/company')
             .then((res) => res.json())
             .then((data) => setData(data));
     }, []);

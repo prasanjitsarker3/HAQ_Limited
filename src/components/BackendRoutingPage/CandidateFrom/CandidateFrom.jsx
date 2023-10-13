@@ -3,32 +3,44 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { json } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
+import date from '../../CustomComponentPage/Date/Date';
 // const imgHostingToken = import.meta.e/nv.VITE_img_token;
 const CandidateFrom = () => {
-    const {user}=useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [country, setCountry] = useState('');
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     // const imgHostingURL = `https://api.imgbb.com/1/upload?expiration=600&key=${imgHostingToken}`
-    const onSubmit = data => { 
-        const candidateData = { 
+    const onSubmit = data => {
+        const candidateData = {
+            date:date,
             name: data.firstName, secondName: data.secondName,
             birth: data.birthDate, city: data.city, companyName: data.companyName,
             country: data.country, degree: data.degree, des: data.description,
-            descriptionPosition: data.descriptionPosition, email:user?.email, uniStart: data.start,
+            descriptionPosition: data.descriptionPosition, email: user?.email, uniStart: data.start,
             uniEnd: data.finished, endExperience: data.finishedPosition, startExperience: data.startPosition,
             institution: data.institution, occupation: data.occupation, phone: data.phone, photo: data.photo,
             experienceTile: data.positionTitle, professional: data.professional, profileSummary: data.profile, state: data.state
         }
-        fetch("https://hqa-server-prasanjitsarker3.vercel.app/candidate", {
+        fetch("http://localhost:5000/candidate", {
             method: "POST",
-            headers: { 
+            headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(candidateData)
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if (data.insertedId) {
+                    reset()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Item added successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             })
     }
 
@@ -89,7 +101,7 @@ const CandidateFrom = () => {
             <div>
                 <Typography className=' text-2xl text-center py-5 font-serif primaryColor font-medium'>Registration CANDIDATE</Typography>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className='px-12'>
+            <form onSubmit={handleSubmit(onSubmit)} className='px-12 md:w-3/4 mb-12 mx-auto bg-gray-100'>
                 <div>
                     <Typography className=' text-2xl font-serif  font-medium py-3 primaryColor'>Account Information</Typography>
                     <div className=' grid md:grid-cols-3 gap-5 '>
@@ -136,7 +148,7 @@ const CandidateFrom = () => {
                         <div className="mb-4 flex flex-col">
                             <label htmlFor="gender" className="block text-gray-700 text-sm mb-1">
                                 Select State:
-                            </label> 
+                            </label>
                             <select
                                 {...register("state", { required: true })}
                                 className="w-full px-3 py-3 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300"

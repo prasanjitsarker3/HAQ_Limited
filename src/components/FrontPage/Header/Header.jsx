@@ -15,7 +15,8 @@ import useAdmin from '../../DashboardCustomHook/useAdmin';
 const Header = () => {
     const { user, userLogOut, loading } = useContext(AuthContext);
     const [openNav, setOpenNav] = useState(false);
-    const [isAdmin,isLoading] = useAdmin(user?.email)
+    // const [isAdmin,isLoading] = useAdmin(user?.email)
+    const[isAdmin]=useAdmin();
 
    
 

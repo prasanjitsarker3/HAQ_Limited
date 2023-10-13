@@ -1,15 +1,17 @@
 
 import { HiCheckCircle, HiMinusSm } from "react-icons/hi";
 import CustomTable from "../CustomData/CustomTable/CustomTable";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaTrash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const ApplicationTable = ({ applications }) => {
-    const navigate=useNavigate();
+const ApplicationTable = ({ applications,refetch }) => {
+    const navigate = useNavigate();
     const tableHead = [
         { name: "Name", dataKey: "name" },
         { name: "Country", dataKey: "country" },
         { name: "Email", dataKey: "email" },
+        { name: "Date", dataKey: "date" },
         { name: "Action", dataKey: null },
     ];
     // const tableRow = [
@@ -114,13 +116,39 @@ const ApplicationTable = ({ applications }) => {
         console.log(id)
         navigate(`/viewApplication/${id}`);
     };
-    const add = (itemId) => {
-        console.log("Clicked", itemId);
-        alert("Add Some Data Client To ");
+    const add = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: `Deleted `,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/candidate/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+
+                    })
+
+            }
+        })
     };
     const option = [
-        { name: "View", icon: <FaEye />, fun: userView },
-        { name: "Add", icon: <HiMinusSm />, fun: add },
+        { name: "View", icon: <FaEye style={{color:"blue"}}/>, fun: userView },
+        { name: "Delete", icon: <FaTrash style={{color:"red"}} />, fun: add },
     ];
     return (
         <div className="px-4">

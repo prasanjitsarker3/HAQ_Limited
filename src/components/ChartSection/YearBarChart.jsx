@@ -9,10 +9,6 @@ const YearBarChart = ({ newData }) => {
         const options = {
             series: [
                 {
-                    name: 'Net Profit',
-                    data: newData,
-                },
-                {
                     name: 'Revenue',
                     data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
                 },
@@ -38,14 +34,15 @@ const YearBarChart = ({ newData }) => {
                     endingShape: 'rounded',
                 },
             },
-            dataLabels: {
-                enabled: false,
-            },
+
             xaxis: {
                 categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
             },
             fill: {
                 opacity: 1,
+            },
+            yaxis: {
+                show: false,
             },
             tooltip: {
                 y: {

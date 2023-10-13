@@ -1,28 +1,43 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import useAxiosSecure from "./useAxiosSecure";
+import { AuthContext } from "../Provider/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
 
 
-const useAdmin = (email) => {
-    const [isAdmin, setIsAdmin] = useState(false);
-    const [isLoading, setLoading] = useState(true);
+const useAdmin = () => {
+    // const [isAdmin, setIsAdmin] = useState(false);
+    // const [isLoading, setLoading] = useState(true);
+    // const [axiosSecure]=useAxiosSecure()
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`https://hqa-server-prasanjitsarker3.vercel.app/users/admin/${email}`);
-                const data = await response.json();
-                setIsAdmin(data.isAdmin);
-                setLoading(false);
-            } catch (error) {
-                console.log("Error fetching admin status:", error);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axiosSecure.get(`/users/admin/${email}`);
+    //             const data = await response.json();
+    //             setIsAdmin(data.isAdmin);
+    //             setLoading(false);
+    //         } catch (error) {
+    //             console.log("Error fetching admin status:", error);
+    //         }
+    //     };
 
-        if (email) {
-            fetchData();
+    //     if (email) {
+    //         fetchData();
+    //     }
+    // }, [email]);
+    // console.log(isAdmin)
+    // return [isAdmin, isLoading];
+    const { user,loading } = useContext(AuthContext);
+    const [axiosSecure] = useAxiosSecure()
+    const { data: isAdmin, isLoading } = useQuery({
+        queryKey: ['isAdmin', user?.email],
+        enabled:!loading,
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/users/admin/${user?.email}`)
+            return res.data.admin;
         }
-    }, [email]);
-
-    return [isAdmin, isLoading];
+    })
+    return [isAdmin, isLoading]
 };
 
 export default useAdmin;

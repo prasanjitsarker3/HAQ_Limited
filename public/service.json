@@ -5,41 +5,46 @@
         "tile": "Transport & Logistics",
         "image": "https://cdn-icons-png.flaticon.com/128/2564/2564794.png",
         "description": "HR consultants are provides broad menu Working Resource Service",
-        "management_Info":""
+        "management_Info":" Services help organizations build long-term relationships with their customers. Most companies seek to develop innovative and unique products to maintain a competitive edge"
     },
     {
         "id": "2",
         "name": "PLANNING",
         "tile": "Construction",
         "image": "https://cdn-icons-png.flaticon.com/128/11126/11126282.png",
-        "description": "Improving Resources provides broad menu Human Resource Service"
+        "description": "Improving Resources provides broad menu Human Resource Service",
+        "management_Info":"These resources make our daily lives possible, providing essentials like running water, flushing toilets, electricity, railways, roads, and bridges. All of these resources enable communities and organizations to access fundamental services, ensuring their sustainability and resilience."
     },
     {
         "id": "3",
         "name": "TRAINING", 
         "tile": "Strategic Planning",
         "image": "https://cdn-icons-png.flaticon.com/128/11517/11517973.png",
-        "description": "Strategic Planning provides broad menu Human Resource Service"
+        "description": "Strategic Planning provides broad menu Human Resource Service",
+        "management_Info":"Learning services refers to the outsourced management of training activities and/or processes. These services can include content development, learning administration, learning delivery, vendor management, measurement and analytics, learning strategy and learning technology."
     },
     {
         "id": "4",
         "name": "MOTIVATION",         
         "tile": "Oil & Gas",
         "image": "https://cdn-icons-png.flaticon.com/128/3074/3074469.png",
-        "description": "Employee Training are provides broad menu Human Resource Service"
+        "description": "Employee Training are provides broad menu Human Resource Service",
+        "management_Info":" we understand that motivation is the driving force behind personal and professional success. That's why we offer a range of motivational services designed to inspire and empower you to reach your goals and achieve your dreams."
     },
     {
         "id": "5",
         "name": "STRATEGIC",
         "tile": "Hospitality",
         "image": "https://cdn-icons-png.flaticon.com/128/3589/3589787.png",
-        "description": "Compensation Consulting provides broad menu Human Resource Service"
+        "description": "Compensation Consulting provides broad menu Human Resource Service",
+        "management_Info":"Crafting a roadmap that outlines your business objectives and the steps to reach them is essential. Our strategic planning services help you define your mission, vision, and goals while considering market trends, competition, and emerging opportunities."
     },
     {
-        "id": "5",
+        "id": "6",
         "name": " CUNSULTING",
         "tile": "Security Guarding",
         "image": "https://cdn-icons-png.flaticon.com/128/3797/3797693.png",
-        "description": "Leadership Training provides broad menu Human Resource Service"
+        "description": "Leadership Training provides broad menu Human Resource Service",
+        "management_Info":"At HQA Limited, we believe in the power of expert guidance. Our consulting services are here to provide you with the knowledge, strategies, and insights you need to overcome challenges, seize opportunities, and achieve your goals."
     }
 ]

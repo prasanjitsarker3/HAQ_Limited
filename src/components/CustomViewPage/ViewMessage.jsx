@@ -11,7 +11,7 @@ const ViewMessage = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('https://hqa-server-prasanjitsarker3.vercel.app/message')
+        fetch('http://localhost:5000/message')
             .then((res) => res.json())
             .then((data) => setData(data));
     }, []);

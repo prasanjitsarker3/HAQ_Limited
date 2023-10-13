@@ -11,7 +11,7 @@ const CompanyFrom = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
         const companyData={ email:user?.email,date:date, name:data.companyName, location:data.location, country:data.country, slogan:data.slogan, state:data.state }
-        fetch("https://hqa-server-prasanjitsarker3.vercel.app/company", {
+        fetch("http://localhost:5000/company", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const CompanyFrom = () => {
             <div>
                 <Typography className=' text-2xl text-center py-5 font-serif primaryColor font-medium'>Registration CompanyFrom</Typography>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className='px-12'>
+            <form onSubmit={handleSubmit(onSubmit)} className='px-12 md:w-3/4 mx-auto bg-gray-100 shadow-xl rounded-lg p-3'>
                 <Typography className=' text-2xl font-serif  font-medium py-3 primaryColor'>Company Information</Typography>
                 <div className=' grid md:grid-cols-3 gap-5'>
                     <div className=' flex flex-col'>
@@ -71,8 +71,8 @@ const CompanyFrom = () => {
                 </div>
 
                 <div className='md:px-48'>
-                    <Button type='submit' className=' my-5 uppercase' variant="gradient" fullWidth>
-                       Register
+                    <Button type='submit' color='blue' className=' my-5 uppercase' variant="gradient" fullWidth>
+                       Submit
                     </Button>
                 </div>
             </form>

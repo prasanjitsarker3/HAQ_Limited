@@ -32,7 +32,7 @@ const AdminCandidate = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://hqa-server-prasanjitsarker3.vercel.app/candidate/${itemId}`, {
+                fetch(`http://localhost:5000/candidate/${itemId}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

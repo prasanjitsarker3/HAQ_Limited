@@ -23,7 +23,7 @@ const SiteCalculation = () => {
 
     return (
         <div>
-            <Parallax blur={3} bgImage="https://img.freepik.com/premium-photo/top-view-business-group-multiethnic-busy-people-meeting-with-other-modern-office-with-laptop-computer-smartphone-tablet-coffee-document-table_71455-2558.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=ais" bgImageAlt="the cat" strength={200}>
+            <Parallax blur={3} bgImage="https://img.freepik.com/premium-photo/group-multiethnic-busy-meeting-conference-discussion-corporate-concept-people-corporate-business-team-conceptxa_71455-1224.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=ais" bgImageAlt="the cat" strength={200}>
                 <div className="grid md:grid-cols-4 text-center text-white py-24">
                     <div className='flex justify-center items-center py-2'>
                         <div>

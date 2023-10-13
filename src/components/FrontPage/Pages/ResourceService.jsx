@@ -14,6 +14,7 @@ const ResourceService = () => {
     const [open, setOpen] = useState(false);
     const [serviceName, setServiceName] = useState(""); // State to hold the service name
     const handleOpen = (name) => {
+        console.log("Name Data", name)
         setServiceName(name); // Set the service name when the IconButton is clicked
         setOpen(true);
     };
@@ -31,14 +32,14 @@ const ResourceService = () => {
             <h1 className='text-center py-6 lg:text-4xl text-xl'>Our Company Resource <span className='primaryColor'>Services</span></h1>
             <div className='grid md:grid-cols-3 gap-5 pb-12'>
                 {service.map((data, index) =>
-                    <Card
+                    <Card 
                         onMouseEnter={() => setHoveredCardIndex(index)}
                         onMouseLeave={() => setHoveredCardIndex(null)}
                         key={index}
-                        className='mt-6 w-96 mx-auto shadow-sm'
+                        className={`${hoveredCardIndex === index ? " bg-gray-200  mt-6 w-96 mx-auto shadow-sm":"mt-6 w-96 mx-auto shadow-sm"} transform transition-transform duration-300 ease-in-out`}
                     >
                         <CardBody>
-                            <div className={`${hoveredCardIndex === index ? 'scale-110' : 'scale-100'
+                            <div className={`${hoveredCardIndex === index ? 'scale-110 ' : 'scale-100'
                                 } flex justify-center transform transition-transform duration-300 ease-in-out`}>
                                 <img src={data.image} alt="" className='h-[90px] w-[90px] serviceBorder rounded-full p-2' />
                             </div>
@@ -55,7 +56,7 @@ const ResourceService = () => {
                         <CardFooter className="pt-0 flex justify-center">
                             <h1 className="inline-block">
                                 <IconButton
-                                    onClick={() => handleOpen(data.name)} // Pass the service name when IconButton is clicked
+                                    onClick={() => handleOpen(data)} // Pass the service name when IconButton is clicked
                                     size='lg'
                                     className={`${hoveredCardIndex === index ? "white bg-orange-700" : ""} rounded-full`}
                                 >
@@ -80,7 +81,7 @@ const ResourceService = () => {
                 )}
             </div>
 
-            <Dialog className=''
+            <Dialog className='' 
                 open={open}
                 onClose={() => setOpen(false)} // Close the modal when the user clicks outside or presses Escape
                 animate={{
@@ -88,12 +89,9 @@ const ResourceService = () => {
                     unmount: { scale: 0.9, y: -100 },
                 }}
             >
-                <DialogHeader>Service Name: {serviceName}</DialogHeader> {/* Display the service name dynamically */}
+                <DialogHeader>{serviceName.name} Service Information </DialogHeader> 
                 <DialogBody divider>
-                    The key to more success is to have a lot of pillows. Put it this way,
-                    it took me twenty-five years to get these plants, twenty-five years of
-                    blood, sweat, and tears, and I'm never giving up, I'm just
-                    getting started. I'm up to something. Fan luv.
+                    {serviceName.management_Info}
                 </DialogBody>
                 <DialogFooter>
                     <IconButton

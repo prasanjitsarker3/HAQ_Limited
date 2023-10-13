@@ -5,7 +5,7 @@ import React from 'react';
 const useAllCompany = () => {
     const { data: allCompany = [], isLoading, refetch } = useQuery(["company"], {
         queryFn: async () => {
-            const res = await axios.get("https://hqa-server-prasanjitsarker3.vercel.app/company");
+            const res = await axios.get("http://localhost:5000/company");
             return res.data;
         }
     });
