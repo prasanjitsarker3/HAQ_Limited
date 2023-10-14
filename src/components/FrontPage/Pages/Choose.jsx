@@ -28,7 +28,7 @@ const Choose = () => {
     return (
         <div className='px-12 '>
             <div>
-                <h1 className='text-center text-4xl font-sans font-semibold  py-5'>Why Choose a Type <span className='primaryColor'>Resources</span></h1>
+                <h1 className='text-center text-4xl font-sans font-semibold  py-5'>Why <span className='primaryColor'>Choose</span>Us</h1>
                 <p className='text-center text-lg pb-5'>We have our special functions are added to a business. We feel that this special function is part of HR its piece of the successful business.</p>
             </div>
             <div class="w-full md:flex md:flex-row flex-col py-12">

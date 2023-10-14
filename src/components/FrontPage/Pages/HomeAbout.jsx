@@ -5,7 +5,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 const HomeAbout = () => {
     return (
         <div>
-            <div className=" md:flex justify-between px-8">
+            <div className=" md:flex justify-between px-8 py-8">
                 <div className='relative lg:w-1/2'>
                     <div className='flex justify-center items-center py-5'>
                         <h1 className='primaryColor text-7xl font-semibold'>2010</h1>

@@ -43,8 +43,8 @@ const Testimonial = () => {
     return (
         <div className=''>
             <div className='py-5'>
-                <h1 className='primaryColor text-4xl text-center'>Testimonial</h1>
-                <h2 className='text-center text-2xl pt-3 primaryColor font-bold'>" <span className='text-black font-normal'>What Our Customers Are Saying</span> "</h2>
+                <h1 className='primaryColor text-4xl text-center font-serif'>Testimonial</h1>
+                <h2 className='text-center text-2xl pt-3 primaryColor font-bold'>" <span className='text-black font-normal'> Success Stroy With Us </span> "</h2>
             </div>
             <Swiper
                 spaceBetween={30}

@@ -6,7 +6,7 @@ const useAllCandidate = () => {
 
     const { data: allCandidate = [], isLoading, refetch } = useQuery(["candidate"], {
         queryFn: async () => {
-            const res = await axios.get("http://localhost:5000/candidate");
+            const res = await axios.get("https://hqa-server.vercel.app/candidate");
             return res.data;
         }
     });

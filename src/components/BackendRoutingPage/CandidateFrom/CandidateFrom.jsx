@@ -22,7 +22,7 @@ const CandidateFrom = () => {
             institution: data.institution, occupation: data.occupation, phone: data.phone, photo: data.photo,
             experienceTile: data.positionTitle, professional: data.professional, profileSummary: data.profile, state: data.state
         }
-        fetch("http://localhost:5000/candidate", {
+        fetch("https://hqa-server.vercel.app/candidate", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

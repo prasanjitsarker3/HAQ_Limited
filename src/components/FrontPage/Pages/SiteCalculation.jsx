@@ -1,8 +1,12 @@
 import { Button, Typography } from '@material-tailwind/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Parallax } from 'react-parallax';
+import CountUp from 'react-countup';
+import ScrollTrigger from 'react-scroll-trigger';
 
 const SiteCalculation = () => {
+    const [couut, setCount] = useState(false);
+
     const backgroundImageUrl = "https://img.freepik.com/premium-photo/top-view-business-group-multiethnic-busy-people-meeting-with-other-modern-office-with-laptop-computer-smartphone-tablet-coffee-document-table_71455-2558.jpg?size=626&ext=jpg&ga=GA1.2.2060036261.1681297115&semt=ais";
 
     const containerStyle = {
@@ -23,15 +27,19 @@ const SiteCalculation = () => {
 
     return (
         <div>
-            <Parallax blur={3} bgImage="https://img.freepik.com/premium-photo/group-multiethnic-busy-meeting-conference-discussion-corporate-concept-people-corporate-business-team-conceptxa_71455-1224.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=ais" bgImageAlt="the cat" strength={200}>
-                <div className="grid md:grid-cols-4 text-center text-white py-24">
+            <Parallax className='h-50vh' blur={3} bgImage="https://img.freepik.com/free-photo/small-table-lamp-plane-world-map_169016-29599.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=sph" bgImageAlt="the cat" strength={200}>
+                <div className="grid md:grid-cols-3 text-center text-white py-24">
                     <div className='flex justify-center items-center py-2'>
                         <div>
                             <div className='flex justify-center'>
                                 <img src="https://cdn-icons-png.flaticon.com/128/3293/3293466.png" alt="" className='h-20 w-20' />
                             </div>
-                            <p className='primaryColor font-bold text-xl pt-2'>1200+</p>
-                            <p className='text-xl'>Happy User</p> 
+                            <ScrollTrigger onEnter={() => setCount(true)} onExit={() => setCount(false)}>
+                                <p className='text-4xl pt-2 primaryColor'>
+                                    {couut && <CountUp start={0} end={920} duration={2} delay={0} />} +
+                                </p>
+                            </ScrollTrigger>
+                            <p className='text-2xl'>Happy User</p>
                         </div>
                     </div>
                     <div className='flex justify-center items-center py-2'>
@@ -39,8 +47,12 @@ const SiteCalculation = () => {
                             <div className='flex justify-center'>
                                 <img src="https://cdn-icons-png.flaticon.com/128/3061/3061341.png" alt="" className='h-20 w-20' />
                             </div>
-                            <p className='text-xl pt-2 primaryColor'>120+</p>
-                            <p className='text-xl'>Forigen Company</p>
+                            <ScrollTrigger onEnter={() => setCount(true)} onExit={() => setCount(false)}>
+                                <p className='text-4xl pt-2 primaryColor'>
+                                    {couut && <CountUp start={0} end={120} duration={2} delay={0} />} +
+                                </p>
+                            </ScrollTrigger>
+                            <p className='text-2xl'>Forigen Company</p>
                         </div>
                     </div>
                     <div className='flex justify-center items-center'>
@@ -48,17 +60,12 @@ const SiteCalculation = () => {
                             <div className='flex justify-center'>
                                 <img src="https://cdn-icons-png.flaticon.com/128/11498/11498770.png" alt="" className='h-20 w-20' />
                             </div>
-                            <p className='text-xl pt-2 primaryColor'>12+</p>
-                            <p className='text-xl'>Country</p>
-                        </div>
-                    </div>
-                    <div className='flex justify-center items-center'>
-                        <div>
-                            <div className='flex justify-center'>
-                                <img src="https://cdn-icons-png.flaticon.com/128/8820/8820245.png" alt="" className='h-20 w-20' />
-                            </div>
-                            <p className='text-xl pt-2 primaryColor'>120+</p>
-                            <p className='text-xl'>Awards Winner</p>
+                            <ScrollTrigger onEnter={() => setCount(true)} onExit={() => setCount(false)}>
+                                <p className='text-4xl pt-2 primaryColor'>
+                                    {couut && <CountUp start={0} end={19} duration={2} delay={0} />} +
+                                </p>
+                            </ScrollTrigger>
+                            <p className='text-2xl'>Country</p>
                         </div>
                     </div>
                 </div>

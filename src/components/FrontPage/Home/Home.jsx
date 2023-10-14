@@ -1,4 +1,5 @@
 import Banner from "../Pages/Banner";
+import ChangeBanner from "../Pages/ChangeBanner";
 import Choose from "../Pages/Choose";
 import Contract from "../Pages/Contract";
 import Footer from "../Pages/Footer";
@@ -13,9 +14,10 @@ import Testimonial from "../Pages/Testimonial";
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
+            {/* <Banner></Banner> */}
+            <ChangeBanner></ChangeBanner>
             {/* <OurCompany></OurCompany> */}
-            <HomeAbout></HomeAbout>
+            <HomeAbout></HomeAbout> 
             <CareerEvent></CareerEvent>
             <ResourceService></ResourceService>
             <Leader></Leader>

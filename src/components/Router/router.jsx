@@ -85,7 +85,7 @@ const router = createBrowserRouter([
             {
                 path: "viewApplication/:id",
                 element: <ApplicationView />,
-                loader: ({ params: { id } }) => fetch(`http://localhost:5000/candidate/${id}`)
+                loader: ({ params: { id } }) => fetch(`https://hqa-server.vercel.app/candidate/${id}`)
 
             },
             {

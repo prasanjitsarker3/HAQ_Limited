@@ -29,7 +29,7 @@ const ResourceService = () => {
 
     return (
         <div>
-            <h1 className='text-center py-6 lg:text-4xl text-xl'>Our Company Resource <span className='primaryColor'>Services</span></h1>
+            <h1 className='text-center py-6 lg:text-4xl text-xl uppercase'>What We Can<span className='primaryColor'> Offer</span></h1>
             <div className='grid md:grid-cols-3 gap-5 pb-12'>
                 {service.map((data, index) =>
                     <Card 
@@ -89,7 +89,7 @@ const ResourceService = () => {
                     unmount: { scale: 0.9, y: -100 },
                 }}
             >
-                <DialogHeader>{serviceName.name} Service Information </DialogHeader> 
+                <DialogHeader className=' uppercase'>{serviceName.name} Service Information </DialogHeader> 
                 <DialogBody divider>
                     {serviceName.management_Info}
                 </DialogBody>

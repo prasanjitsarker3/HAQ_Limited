@@ -2,6 +2,7 @@ import { Button } from '@material-tailwind/react';
 import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
+import date from '../CustomComponentPage/Date/Date';
 
 const SocialLogin = () => {
     const { googleSignUp } = useContext(AuthContext);
@@ -13,21 +14,22 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser.photoURL);
-                const saveUser = { name: loggedUser.displayName, email: loggedUser.email, image:loggedUser.photoURL}
-                fetch('http://localhost:5000/users', {
+
+                const saveUser = { date: date, name: loggedUser.displayName, email: loggedUser.email, image: loggedUser.photoURL }
+                fetch('https://hqa-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
-                        'content-type': 'application/json' 
-                    }, 
+                        'content-type': 'application/json'
+                    },
                     body: JSON.stringify(saveUser)
                 })
-                .then(res => res.json())
+                    .then(res => res.json())
                     .then(() => {
                         navigate(from, { replace: true })
                     })
-               
+
             })
-            .catch(error => { 
+            .catch(error => {
                 console.log(error.message);
             })
     }

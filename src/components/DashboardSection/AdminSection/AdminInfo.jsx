@@ -33,13 +33,13 @@ const AdminInfo = () => {
                     <h1 className='text-xl font-sans'>Total User</h1>
                     <h1 className='text-xl'>120</h1>
                 </div>
-               
+
             </div>
-            <div className='grid md:grid-cols-2 gap-5 px-12  h-[350px] overflow-hidden'>
-                <div className='w-[500px] h-[350px] bg-white'>
+            <div className='grid md:grid-cols-2 gap-5 px-12  h-[350px] overflow-hidden mr-3'>
+                <div className=' h-[350px] bg-white'>
                     <YearBarChart newData={newData} />
                 </div>
-                <div className='w-[500px] h-[350px] bg-white'>
+                <div className=' h-[350px] bg-white'>
                     <ApplyChart data={data} />
                 </div>
             </div>

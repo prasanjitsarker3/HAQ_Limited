@@ -9,7 +9,7 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
     return (
         <footer className="relative w-full pb-5">
-            <div className="mx-auto w-full px-8 bg-black p-3 text-white ">
+            <div className="mx-auto w-full px-8 bg-blue-gray-900 p-3 text-white ">
                 <div className=" md:flex md:flex-row flex-col justify-center w-full">
                     <div className=' grid md:grid-cols-4 gap-5 py-3'>
                         <div>
@@ -21,9 +21,8 @@ const Footer = () => {
                                 A career-related theme that is truly multi-purpose, designed to meet all your career agency needs.
                                 The barrage of shortcodes that works in the pages makes it the better choice for your business.
                             </h1>
-                            <h1 className='text-xl font-semibold'>STAY CONNECTED</h1>
                         </div>
-                        <div className=' space-y-2'>
+                        <div className=' space-y-1'>
                             <h1 className='text-xl'>Useful Links</h1>
                             <div className="group flex justify-start items-center gap-1 transition-transform translate-x-0 group-hover:translate-x-6">
                                 <FaAngleRight />
