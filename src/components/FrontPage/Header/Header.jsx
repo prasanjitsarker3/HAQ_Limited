@@ -135,7 +135,7 @@ const Header = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <NavLink to="/" className={({ isActive }) =>
+                <NavLink to="/license" className={({ isActive }) =>
                     isActive
                         ? '  bg-primary text-blue-700 cursor-pointer flex items-center text-base'
                         : '  group hover:bg-primary text-secondary/40 cursor-pointer transition-all flex items-center text-base'

@@ -66,7 +66,7 @@ const Testimonial = () => {
                 {
                     testimonials.map(test =>
                         <SwiperSlide className='md:px-32 '>
-                            <div className='grid md:grid-cols-2  p-5 py-10 bg-[#1FAA59]'>
+                            <div className="grid md:grid-cols-2 p-5 py-10 bg-gradient-to-r from-blue-900 via-blue-500 to-blue-700 animate-gradient-change">
                                 <div className='flex justify-center px-5'>
                                     <img
                                         src={test.image} className="w-[200px] h-[200px] rounded-full p-2 bg-gradient-to-br from-blue-300 to-purple-400"

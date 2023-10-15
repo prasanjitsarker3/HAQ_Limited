@@ -121,8 +121,8 @@ const Contract = () => {
                             </IconButton>
                         </div>
                         <DialogBody>
-                            <Typography className=' text-right'>Hello</Typography>
-                            <Typography className=' text-right'>How can i help you?</Typography>
+                            <Typography className=' text-right text-blue-600'>Hello</Typography>
+                            <Typography className=' text-right text-blue-600'>How can i help you?</Typography>
                             {/* <Typography className=' text-blue-600'>...</Typography> */}
                             <div className="w-[60px] flex justify-start mr-5">
                                 <Input variant="static" placeholder='typing...' icon={<FaPaperPlane className='text-blue-600 cursor-pointer' />} />

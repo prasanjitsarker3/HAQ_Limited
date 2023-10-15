@@ -12,11 +12,8 @@ const Footer = () => {
             <div className="mx-auto w-full px-8 bg-blue-gray-900 p-3 text-white ">
                 <div className=" md:flex md:flex-row flex-col justify-center w-full">
                     <div className=' grid md:grid-cols-4 gap-5 py-3'>
-                        <div>
-                            <div className=' flex justify-start items-center pb-4'>
-                                <h1 className=' text-2xl colorPrimary font-bold'>HQA LImited</h1>
-                                <h1 className='text-2xl colorPrimary font-semibold '>Agency</h1>
-                            </div>
+                        <div className=' flex justify-center items-center'>
+                    
                             <h1 className='text-md text-white'>Career Agency
                                 A career-related theme that is truly multi-purpose, designed to meet all your career agency needs.
                                 The barrage of shortcodes that works in the pages makes it the better choice for your business.
@@ -32,10 +29,7 @@ const Footer = () => {
                                 <FaAngleRight />
                                 <h1 className='text-md'>About Us</h1>
                             </div>
-                            <div className=' flex justify-start items-center gap-1'>
-                                <FaAngleRight />
-                                <h1 className='text-md'>Careers</h1>
-                            </div>
+                            
                             <div className=' flex justify-start items-center gap-1'>
                                 <FaAngleRight />
                                 <h1 className='text-md'>Contact Us</h1>

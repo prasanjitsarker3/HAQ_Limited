@@ -4,6 +4,7 @@ import Choose from "../Pages/Choose";
 import Contract from "../Pages/Contract";
 import Footer from "../Pages/Footer";
 import CareerEvent from "../Pages/FrontPage/CareerEvent";
+import HearVideoSection from "../Pages/HearVideoSection";
 import HomeAbout from "../Pages/HomeAbout";
 import Leader from "../Pages/Leader";
 import OurCompany from "../Pages/OurCompany";
@@ -20,7 +21,8 @@ const Home = () => {
             <HomeAbout></HomeAbout> 
             <CareerEvent></CareerEvent>
             <ResourceService></ResourceService>
-            <Leader></Leader>
+            {/* <Leader></Leader> */}
+            <HearVideoSection></HearVideoSection>
             <Choose></Choose> 
             <SiteCalculation></SiteCalculation>
             <Testimonial></Testimonial>

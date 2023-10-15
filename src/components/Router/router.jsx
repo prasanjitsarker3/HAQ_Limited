@@ -27,6 +27,9 @@ import CompanyViewPage from "../CustomViewPage/CompanyViewPage";
 import ViewMessage from "../CustomViewPage/ViewMessage";
 import AdminViewAppliation from "../DashboardSection/AdminSection/AdminViewAppliation";
 import AdminViewCompany from "../DashboardSection/AdminSection/AdminViewCompany";
+import CustomDashboard from "../Layout/CustomDashboard";
+import AllVideo from "../ViewRoutingPage/AllVideo";
+import License from "../ViewRoutingPage/License";
 
 
 const router = createBrowserRouter([
@@ -53,6 +56,10 @@ const router = createBrowserRouter([
             {
                 path: "login",
                 element: <Login></Login>
+            },
+            {
+                path: "license",
+                element:<License/>
             },
             {
                 path: "register",
@@ -141,6 +148,16 @@ const router = createBrowserRouter([
                 element: <ViewMessage></ViewMessage>
             }
 
+        ]
+    },
+    {
+        path: "customPost",
+        element: <CustomDashboard />,
+        children: [
+            {
+                path: "video",
+                element: <AllVideo />
+            }
         ]
     }
 ])
