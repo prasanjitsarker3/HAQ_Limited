@@ -26,9 +26,9 @@ const Banner = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselData.length);
-        }, 3000); // 3000 milliseconds (3 seconds)
+        }, 3000); 
 
-        return () => clearInterval(interval); // Cleanup on unmount
+        return () => clearInterval(interval); 
     }, [carouselData]);
     return (
         <div>

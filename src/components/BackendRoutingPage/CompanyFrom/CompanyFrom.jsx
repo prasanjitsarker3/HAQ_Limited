@@ -11,7 +11,7 @@ const CompanyFrom = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
         const companyData={ email:user?.email,date:date, name:data.companyName, location:data.location, country:data.country, slogan:data.slogan, state:data.state }
-        fetch("https://hqa-server.vercel.app/company", {
+        fetch("http://localhost:5000/company", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

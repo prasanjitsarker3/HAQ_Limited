@@ -36,7 +36,7 @@ const Register = () => {
                 updateUserProfile(data.name)
                     .then(() => {
                         const saveUser = {date:date, name: data.name, email: data.email }
-                        fetch('https://hqa-server.vercel.app/users', {
+                        fetch('http://localhost:5000/users', {
                             method: "POST",
                             headers: {
                                 'content-type': 'application/json'

@@ -5,7 +5,7 @@ import React from 'react';
 const useAllMessage = () => {
     const { data: allMessage = [], isLoading, refetch } = useQuery(["message"], {
         queryFn: async () => {
-            const res = await axios.get("https://hqa-server.vercel.app/message");
+            const res = await axios.get("http://localhost:5000/message");
             return res.data;
         }
     });

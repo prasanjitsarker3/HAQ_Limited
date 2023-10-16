@@ -8,7 +8,7 @@ const ApplicationView = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch('https://hqa-server.vercel.app/candidate')
+        fetch('http://localhost:5000/candidate')
             .then((res) => res.json())
             .then((data) => setData(data));
     }, []);

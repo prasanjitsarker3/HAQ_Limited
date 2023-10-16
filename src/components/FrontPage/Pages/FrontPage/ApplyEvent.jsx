@@ -6,11 +6,11 @@ const ApplyEvent = () => {
     const history = useNavigate();
 
     const handleGoBack = () => {
-        history.goBack();
-        //   history(-1);
+        // history.goBack();
+          history(-1);
     };
     return (
-        <div className=" bg-blue-gray-50 mx-auto rounded-md">
+        <div className="  mx-auto rounded-md md:px-12 md:pb-5">
             <div className=" flex justify-center w-full mx-auto  p-3">
                 <div className="flex flex-col md:flex-row gap-5 ">
                     <figure className="relative w-full md:w-[400px] mx-auto">
@@ -53,7 +53,7 @@ const ApplyEvent = () => {
                 </div>
             </div>
             <div className=" w-full md:w-3/4    mx-auto p-2 ">
-                <div className=" grid md:grid-cols-2 px-16 gap-6">
+                <div className=" grid md:grid-cols-2 px-16 gap-3">
                     <Input className="" variant="standard" label="Enter Name " />
                     <Input variant="standard" label="Enter Address" />
                     <Input variant="standard" label="Enter Contract" />

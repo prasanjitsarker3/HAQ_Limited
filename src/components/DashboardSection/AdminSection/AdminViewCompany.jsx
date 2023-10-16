@@ -11,7 +11,7 @@ const AdminViewCompany = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('https://hqa-server.vercel.app/company')
+        fetch('http://localhost:5000/company')
             .then((res) => res.json())
             .then((data) => setData(data));
     }, []);

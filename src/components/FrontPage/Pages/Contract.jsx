@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaPaperPlane, FaPhoneFlip, FaSeedling } from "react-icons/fa6";
-import { FaEnvelope, FaFacebookMessenger, FaMapMarkerAlt, FaTimes } from "react-icons/fa";
+import { FaEnvelope, FaFacebookMessenger, FaMapMarkerAlt, FaRegCommentDots, FaTimes } from "react-icons/fa";
 import ContractSection from './FrontPage/ContractSection';
 import {
     Button,
@@ -12,19 +12,53 @@ import {
     Textarea,
     IconButton,
     Typography,
+    Chip,
 } from '@material-tailwind/react';
 import Accordion from './AccordionSection';
 import AccordionSection from './AccordionSection';
+import CaseMessageFrom from '../../CustomBackendUploadAndPost/CaseMessageFrom';
+import { useRef } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
+import useChat from '../../UserCustomHook/useChat';
 
 const Contract = () => {
-    const [open, setOpen] = useState(false);
-
-    const handleOpen = () => setOpen(!open);
+    const [data, setData] = useState(null)
+    const [chat, isLoading, refetch] = useChat()
+    const { user } = useContext(AuthContext);
     const [size, setSize] = React.useState(null);
-
     const handleOpened = (value) => setSize(value);
+    const message = useRef();
+    const handlePostMessage = () => {
+        const messageValue = message.current.value;
+        const data = { chat: messageValue, email: user?.email }
+        fetch("http://localhost:5000/chat", {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
 
+    useEffect(() => {
+        if (!isLoading && chat) {
+            const chatData = chat.map(item => item.chat);
+            setData(chatData);
+        }
+    }, [chat])
+    const [messages, setMessage] = useState(null);
 
+    if (data) {
+        setTimeout(() => {
+            setMessage("Please,waiting Some Time !");
+        }, 5000); 
+    }
     return (
         <div>
             <div>
@@ -78,30 +112,8 @@ const Contract = () => {
                     <h1 className='text-xl uppercase font-semibold text-gray-800'>Start New Case</h1>
                     <h1 className=' text-lg font-semibold text-gray-800'>Start a new case</h1>
                     <h1 className=' flex-1'>Just Send us your questions or concern by starting a new case and we will give you the help you need.</h1>
-                    <Button onClick={handleOpen} color='blue' className='uppercase'>Start here</Button>
-                    <Dialog open={open} handler={handleOpen}>
-                        <div className="flex items-center justify-between">
-                            <DialogHeader>New message to @</DialogHeader>
-                            <IconButton onClick={handleOpen} variant="gradient" color='red' className="rounded-full mr-3">
-                                <FaTimes />
-                            </IconButton>
+                    <CaseMessageFrom />
 
-                        </div>
-                        <DialogBody divider>
-                            <div className="grid gap-6">
-                                <Input label="Username" />
-                                <Textarea label="Message" />
-                            </div>
-                        </DialogBody>
-                        <DialogFooter className="space-x-2">
-                            <Button variant="gradient" color="red" onClick={handleOpen}>
-                                close
-                            </Button>
-                            <Button variant="gradient" color="blue" onClick={handleOpen}>
-                                send message
-                            </Button>
-                        </DialogFooter>
-                    </Dialog>
                 </div>
                 <div className='flex space-y-2 flex-col items-center justify-center w-full md:w-[300px] mx-auto p-5 rounded shadow-sm border border-yellow-900 '>
                     <img className=' h-12 w-12' src="https://cdn-icons-png.flaticon.com/128/4457/4457168.png" alt="" />
@@ -121,11 +133,19 @@ const Contract = () => {
                             </IconButton>
                         </div>
                         <DialogBody>
+
                             <Typography className=' text-right text-blue-600'>Hello</Typography>
                             <Typography className=' text-right text-blue-600'>How can i help you?</Typography>
-                            {/* <Typography className=' text-blue-600'>...</Typography> */}
-                            <div className="w-[60px] flex justify-start mr-5">
-                                <Input variant="static" placeholder='typing...' icon={<FaPaperPlane className='text-blue-600 cursor-pointer' />} />
+                            <Typography className='text-blue-600 text-left'>{data}</Typography>
+                            <Typography className=' text-right text-blue-600'>{messages}</Typography>
+                            <div className=" flex justify-start mr-5 mt-2">
+                                <input className='border-white rounded p-1 bg-blue-gray-50' ref={message} placeholder="typing..." />
+                                {
+                                    user ? <FaRegCommentDots onClick={handlePostMessage} className="text-blue-600 mt-1  cursor-pointer w-6 h-6" /> :
+                                        <Link to="/login">
+                                            <Chip className='mt-1' value="Login" color='blue' />
+                                        </Link>
+                                }
                             </div>
                         </DialogBody>
 

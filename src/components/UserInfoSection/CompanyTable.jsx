@@ -32,7 +32,7 @@ const CompanyTable = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://hqa-server.vercel.app/company/${id}`, {
+                fetch(`http://localhost:5000/company/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

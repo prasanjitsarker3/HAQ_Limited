@@ -16,7 +16,7 @@ const SocialLogin = () => {
                 console.log(loggedUser.photoURL);
 
                 const saveUser = { date: date, name: loggedUser.displayName, email: loggedUser.email, image: loggedUser.photoURL }
-                fetch('https://hqa-server.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

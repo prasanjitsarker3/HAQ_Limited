@@ -115,7 +115,7 @@ const Header = () => {
                     Company Profile
                 </NavLink>
             </Typography>
-            <Typography
+            {/* <Typography
                 as="li"
                 variant="small"
                 color="blue-gray"
@@ -128,7 +128,7 @@ const Header = () => {
                 } >
                     Choose Us
                 </NavLink>
-            </Typography>
+            </Typography> */}
             <Typography
                 as="li"
                 variant="small"

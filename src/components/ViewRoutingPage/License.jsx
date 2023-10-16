@@ -2,7 +2,7 @@ import React from 'react';
 import license1 from '../../../src/assets/license1.jpg'
 import license2 from '../../../src/assets/license2.jpg'
 
-const License = () => {
+const License = () => { 
     return (
         <div className=' text-2xl text-yellow-700 text-center py-5'>
             <h1>Govt License Page</h1>
