@@ -61,7 +61,7 @@ const AdminSidebar = () => {
                     } >
                         <ListItemPrefix className=' flex gap-3 w-full'>
                             <HiAnnotation className="h-5 w-5" />
-                            <Typography>Apply Post</Typography>
+                            <Typography>Apply Posts</Typography>
                         </ListItemPrefix>
                     </NavLink>
                 </ListItem>
