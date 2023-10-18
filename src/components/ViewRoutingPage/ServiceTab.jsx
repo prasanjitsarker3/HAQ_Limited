@@ -32,23 +32,23 @@ const ServiceTab = () => {
     return (
         <div className=' px-12 py-12'>
             <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <TabList className="flex flex-col md:flex-row justify-evenly gap-5 bg-gray-200  p-3 rounded text-lg font-extralight border-b-0">
+                <TabList className="flex flex-col md:flex-row justify-evenly gap-5   p-3 rounded text-lg font-extralight border-b-0">
                     <Tab
-                        className={` border-white px-7 cursor-pointer  text-center rounded ${activeTabIndex === 0 ? 'bg-white shadow-md  border-white borderColor ! transition duration-300 ease-in-out' : ''
+                        className={`  px-7 cursor-pointer border-2 border-blue-600 p-2 text-center rounded ${activeTabIndex === 0 ? ' shadow-md text-white bg-blue-600 border-none  transition duration-300 ease-in-out' : ''
                             }`}
                         onClick={() => handleTabClick(0)}
                     >
                         Manpower
                     </Tab>
                     <Tab
-                        className={` border-white cursor-pointer text-center px-7 ${activeTabIndex === 1 ? 'bg-white shadow-md border-white  transition duration-300 ease-in-out' : ''
+                        className={` cursor-pointer border-2 border-blue-600 p-2 text-center rounded px-7 ${activeTabIndex === 1 ? 'shadow-md text-white bg-blue-600 border-none  transition duration-300 ease-in-out' : ''
                             }`}
                         onClick={() => handleTabClick(1)}
                     >
                         Visa Processed
                     </Tab>
                     <Tab
-                        className={` border-white cursor-pointer text-center px-7 ${activeTabIndex === 2 ? 'bg-white shadow-md border-white transition duration-300 ease-in-out' : ''
+                        className={` cursor-pointer border-2 border-blue-600 p-2 text-center rounded px-7 ${activeTabIndex === 2 ? 'shadow-md text-white bg-blue-600 border-none transition duration-300 ease-in-out' : ''
                             }`}
                         onClick={() => handleTabClick(2)}
                     >

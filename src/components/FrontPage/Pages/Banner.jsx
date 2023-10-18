@@ -77,7 +77,7 @@ const Banner = () => {
                                         color="white"
                                         className="flex items-center gap-3 primaryColor"
                                     >
-                                        <img src="https://img.freepik.com/free-vector/branding-identity-corporate-logo-vector-design-template_460848-13992.jpg?size=626&ext=jpg&ga=GA1.1.2060036261.1681297115&semt=sph" alt="metamask" className="h-6 w-6 rounded-full" />
+                                        <img src="https://i.ibb.co/vc419Gb/logo.png" alt="metamask" className="h-6 w-6 rounded-full" />
                                         HAO Limited
                                     </Button>
                                 </div>

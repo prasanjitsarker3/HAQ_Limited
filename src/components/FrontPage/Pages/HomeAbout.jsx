@@ -17,9 +17,10 @@ const HomeAbout = () => {
                 </div>
                 <div className='lg:w-1/2 p-4'>
                     <h1 className=' text-5xl py-5 font-semibold text-blue-600'>About Us </h1>
-                    <h1 className=' text-lg'>HM Angel Overseas Limited! A hub of global reach and local expertise, combined to deliver an unmatched perspective with detailed insight into markets across all major industries. Local or global, we create the workforce solutions you need, in various sectors like Overseas Human Resource Recruitment, Integrated Facility Management, Payroll & Manpower Outsourcing, and Non-Profit Organization. Raquib Mohammad Fakhrul Rocky, Managing Director of MUNSHI, has the vision to develop the company while helping society simultaneously. In his words, when our partners succeed, we succeed, by developing an understanding of our partner’s business to provide an efficient workforce on client’s premises.</h1>
-                    <div className='py-5 flex'>
-                        <Button color="amber" className='text-white py-3 flex justify-center items-center gap-3'><span>More Information</span><FaLongArrowAltRight /></Button>
+                    <h1 className=' text-lg text-justify'>HM ANGEL OVERSEAS LIMITED is a government-approved recruiting agency in Bangladesh, with Recruiting License No. 2129. Since 2012, HM ANGEL OVERSEAS LTD has created more than 7,000 overseas jobs for Bangladeshi people. The company has been working with top-class companies and providing them with HR solutions. HM ANGEL OVERSEAS LTD is renowned for its work in the SAUDI ARABIA & Middle East market. The company has a vision to create more than 10 million jobs for Bangladeshi people by 2030. Following the growing demand, HM ANGEL OVERSEAS LTD aims to grab the market and create over 50,000 new jobs.</h1>
+                    <h1 className=' text-lg pt-5 text-justify'>HM ANGEL OVERSEAS LIMITED's impact on the Bangladesh economy is significant. The company has created thousands of jobs for Bangladeshi people, which has helped to reduce unemployment and poverty. The company also provides its employees with training and development opportunities, which helps to improve their skills and knowledge. This, in turn, makes them more productive and competitive in the global workforce.</h1>
+                    <div className='pt-12 flex'>
+                        <Button color="blue" className='text-white py-3 flex justify-center items-center gap-3'><span>More Information</span><FaLongArrowAltRight /></Button>
                     </div>
                 </div>
             </div>

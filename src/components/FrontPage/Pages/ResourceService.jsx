@@ -43,7 +43,7 @@ const ResourceService = () => {
                                 } flex justify-center transform transition-transform duration-300 ease-in-out`}>
                                 <img src={data.image} alt="" className='h-[90px] w-[90px] serviceBorder rounded-full p-2' />
                             </div>
-                            <Typography variant="h5" color="blue-gray" className="py-2 text-center">
+                            <Typography variant="h5" color="blue-gray" className="py-2 text-center text-light-blue-600">
                                 {data.name}
                             </Typography>
                             <Typography variant="h5" color="blue-gray" className="py-2 text-center">
@@ -58,7 +58,7 @@ const ResourceService = () => {
                                 <IconButton
                                     onClick={() => handleOpen(data)} // Pass the service name when IconButton is clicked
                                     size='lg'
-                                    className={`${hoveredCardIndex === index ? "white bg-orange-700" : ""} rounded-full`}
+                                    className={`${hoveredCardIndex === index ? "white bg-blue-800" : ""} rounded-full`}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"

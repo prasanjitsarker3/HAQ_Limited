@@ -16,9 +16,9 @@ const Header = () => {
     const { user, userLogOut, loading } = useContext(AuthContext);
     const [openNav, setOpenNav] = useState(false);
     // const [isAdmin,isLoading] = useAdmin(user?.email)
-    const[isAdmin]=useAdmin();
+    const [isAdmin] = useAdmin();
 
-   
+
 
     const handleLogOut = () => {
         userLogOut()
@@ -33,7 +33,7 @@ const Header = () => {
             () => window.innerWidth >= 960 && setOpenNav(false)
         );
     }, []);
-   
+
     const dashboard = <>
         {
             isAdmin && <Link to="/dashboard/admin" className='mr-3'>Dashboard</Link>
@@ -177,13 +177,8 @@ const Header = () => {
     return (
         <Navbar className="sticky top-0 z-10 h-max max-w-full  rounded-none py-2 px-4 lg:px-8 lg:py-4">
             <div className="flex items-center justify-between text-blue-gray-900">
-                <Typography
-                    as="a"
-                    href="#"
-                    className="mr-4 cursor-pointer text-2xl py-1.5 font-medium primaryColor"
-                >
-                    HAO Limited
-                </Typography>
+            <img className='h-[60px] w-[160px] rounded-full' src="https://i.ibb.co/zsCSynv/SUUUUUUUUSSSSTTT.png" alt="" />
+
                 <div className="flex items-center gap-4">
                     <div className="mr-4 hidden lg:block">{navList}</div>
                     <h1
