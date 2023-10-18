@@ -33,7 +33,7 @@ const Banner = () => {
     return (
         <div>
             <Carousel
-                className="max-h-[768px] w-[calc(100%+48px)] overflow-scroll"
+                className="95vh"
                 navigation={({ setActiveIndex, activeIndex, length }) => (
                     <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
                         {new Array(length).fill("").map((_, i) => (
