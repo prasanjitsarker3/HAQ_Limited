@@ -10,9 +10,9 @@ const ApplyEvent = () => {
           history(-1);
     };
     return (
-        <div className="  mx-auto rounded-md md:px-12 md:pb-5">
+        <div className="mx-auto rounded-md md:px-12 md:pb-5">
             <div className=" flex justify-center w-full mx-auto  p-3">
-                <div className="flex flex-col md:flex-row gap-5 ">
+                <div className="grid  md:grid-cols-2 lg:grid-cols-3 gap-5 px-12 ">
                     <figure className="relative w-full md:w-[400px] mx-auto">
                         <img
                             className="h-full w-full rounded-xl object-cover object-center"

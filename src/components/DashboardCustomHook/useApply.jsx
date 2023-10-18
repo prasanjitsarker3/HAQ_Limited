@@ -5,7 +5,7 @@ import axios from 'axios';
 const useApply = () => {
     const { data: applyData = [], isLoading, refetch } = useQuery(["apply"], {
         queryFn: async () => {
-            const res = await axios.get("http://localhost:5000/apply");
+            const res = await axios.get("https://hqa-server.vercel.app/apply");
             return res.data;
         }
     });

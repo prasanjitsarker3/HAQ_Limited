@@ -25,7 +25,7 @@ const AdminBlogPost = () => {
 
     const onSubmit = data => {
         const saveData = { name: data.name, about:data.about, email: user?.email, image: selectedImage, role: selectedOption.value, location: data.location, info: data.info, des: data.extra, data: date }
-        fetch("http://localhost:5000/apply", {
+        fetch("https://hqa-server.vercel.app/apply", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

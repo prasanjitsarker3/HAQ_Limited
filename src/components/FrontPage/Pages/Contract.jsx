@@ -33,7 +33,7 @@ const Contract = () => {
     const handlePostMessage = () => {
         const messageValue = message.current.value;
         const data = { chat: messageValue, email: user?.email }
-        fetch("http://localhost:5000/chat", {
+        fetch("https://hqa-server.vercel.app/chat", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
