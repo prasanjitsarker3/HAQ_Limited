@@ -16,7 +16,7 @@ const HomeAbout = () => {
 
                 </div>
                 <div className='lg:w-1/2 p-4'>
-                    <h1 className=' text-5xl py-5 font-semibold'>About Us </h1>
+                    <h1 className=' text-5xl py-5 font-semibold text-blue-600'>About Us </h1>
                     <h1 className=' text-lg'>HM Angel Overseas Limited! A hub of global reach and local expertise, combined to deliver an unmatched perspective with detailed insight into markets across all major industries. Local or global, we create the workforce solutions you need, in various sectors like Overseas Human Resource Recruitment, Integrated Facility Management, Payroll & Manpower Outsourcing, and Non-Profit Organization. Raquib Mohammad Fakhrul Rocky, Managing Director of MUNSHI, has the vision to develop the company while helping society simultaneously. In his words, when our partners succeed, we succeed, by developing an understanding of our partner’s business to provide an efficient workforce on client’s premises.</h1>
                     <div className='py-5 flex'>
                         <Button color="amber" className='text-white py-3 flex justify-center items-center gap-3'><span>More Information</span><FaLongArrowAltRight /></Button>
