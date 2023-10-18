@@ -41,7 +41,7 @@ const ChangeBanner = () => {
 
     return (
         <div className="w-full">
-            <Carousel className="rounded-xl  md:h-[530px]">
+            <Carousel className="rounded-xl  h-[87vh]">
                 <div className="relative w-full h-full">
                     <img
                         src={images[currentIndex].src}
