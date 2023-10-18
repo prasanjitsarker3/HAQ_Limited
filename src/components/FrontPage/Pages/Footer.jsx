@@ -91,8 +91,8 @@ const Footer = () => {
             </div>
             <div className="w-full  pb-8 flex justify-center bg-blue-gray-50">
                 <div>
-                    <hr className=" border-blue-gray-50" />
-                    <Typography color="blue-gray" className="text-center text-lg font-normal">
+                    {/* <hr className="border-2 w-full border-black" /> */}
+                    <Typography color="blue-gray" className="text-center text-lg font-normal border border-gray-400 sha px-32 rounded py-1">
                         &copy; HQA Limited Agency || Developer Md Monirul Islam
                     </Typography>
                 </div>

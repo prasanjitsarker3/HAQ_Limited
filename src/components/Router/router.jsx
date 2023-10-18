@@ -30,6 +30,7 @@ import AdminViewCompany from "../DashboardSection/AdminSection/AdminViewCompany"
 import CustomDashboard from "../Layout/CustomDashboard";
 import AllVideo from "../ViewRoutingPage/AllVideo";
 import License from "../ViewRoutingPage/License";
+import AdminApply from "../DashboardSection/AdminSection/AdminApply";
 
 
 const router = createBrowserRouter([
@@ -146,6 +147,10 @@ const router = createBrowserRouter([
             {
                 path: "viewMessage/:id",
                 element: <ViewMessage></ViewMessage>
+            },
+            {
+                path:"applyUser",
+                element:<AdminApply/>
             }
 
         ]

@@ -54,8 +54,6 @@ const AdminSidebar = () => {
                     <Link to="/dashboard/allUser">All User</Link>
                 </ListItem>
                 <ListItem className='text-left max-w-[10rem] my-1'>
-
-                    {/* <Link to="/dashboard/adminBlogPost">Blog Post</Link> */}
                     <NavLink to="/dashboard/adminBlogPost" className={({ isActive }) =>
                         isActive
                             ? 'text-blue-700 font-bold'
@@ -63,7 +61,19 @@ const AdminSidebar = () => {
                     } >
                         <ListItemPrefix className=' flex gap-3 w-full'>
                             <HiAnnotation className="h-5 w-5" />
-                            <Typography>Blog Post</Typography>
+                            <Typography>Apply Post</Typography>
+                        </ListItemPrefix>
+                    </NavLink>
+                </ListItem>
+                <ListItem className='text-left max-w-[10rem] my-1'>
+                    <NavLink to="/dashboard/applyUser" className={({ isActive }) =>
+                        isActive
+                            ? 'text-blue-700 font-bold'
+                            : ''
+                    } >
+                        <ListItemPrefix className=' flex gap-3 w-full'>
+                            <HiAnnotation className="h-5 w-5" />
+                            <Typography>All Apply</Typography>
                         </ListItemPrefix>
                     </NavLink>
                 </ListItem>

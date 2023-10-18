@@ -10,7 +10,6 @@ const useChat = () => {
         queryKey: ['chat', user?.email],
         queryFn: async () => {
             const res = await axiosSecure(`/chat/${user?.email}`);
-            // console.log("Company Data", res.data)
             return res.data;
         }
     });

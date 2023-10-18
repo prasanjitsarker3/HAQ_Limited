@@ -137,7 +137,7 @@ const Contract = () => {
                             <Typography className=' text-right text-blue-600'>Hello</Typography>
                             <Typography className=' text-right text-blue-600'>How can i help you?</Typography>
                             <Typography className='text-blue-600 text-left'>{data}</Typography>
-                            <Typography className=' text-right text-blue-600'>{messages}</Typography>
+                           {chat && <Typography className=' text-right text-blue-600'>{messages}</Typography>}
                             <div className=" flex justify-start mr-5 mt-2">
                                 <input className='border-white rounded p-1 bg-blue-gray-50' ref={message} placeholder="typing..." />
                                 {
