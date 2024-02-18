@@ -31,139 +31,140 @@ import CustomDashboard from "../Layout/CustomDashboard";
 import AllVideo from "../ViewRoutingPage/AllVideo";
 import License from "../ViewRoutingPage/License";
 import AdminApply from "../DashboardSection/AdminSection/AdminApply";
-
+import AdminVideoPost from "../DashboardSection/AdminSection/AdminVideoPost";
 
 const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
         path: "/",
-        element: <Main></Main>,
-        children: [
-            {
-                path: "/",
-                element: <Home></Home>
-            },
-            {
-                path: "service",
-                element: <CompanyService></CompanyService>
-            },
-            {
-                path: "profile",
-                element: <Profile></Profile>
-            },
-            {
-                path: "choose",
-                element: <Choose></Choose>
-            },
-            {
-                path: "login",
-                element: <Login></Login>
-            },
-            {
-                path: "license",
-                element:<License/>
-            },
-            {
-                path: "register",
-                element: <Register></Register>
-            },
-            {
-                path: "candidate",
-                element: <Candidate></Candidate>
-            },
-            {
-                path: "company",
-                element: <Company></Company>
-            },
-            {
-                path: "application",
-                element: <UserApplication></UserApplication>
-            },
-            {
-                path: "companyInfo",
-                element: <CompanyTable></CompanyTable>
-            },
-            {
-                path: "userProfile",
-                element: <UserProfile></UserProfile>
-            },
-            {
-                path: "applyEvent",
-                element: <ApplyEvent></ApplyEvent>
-            },
-            {
-                path: "viewApplication/:id",
-                element: <ApplicationView />,
-                loader: ({ params: { id } }) => fetch(`https://hqa-server.vercel.app/candidate/${id}`)
-
-            },
-            {
-                path: "viewCompany/:id",
-                element: <CompanyViewPage />,
-            },
-            {
-                path: "viewMessage/:id",
-                element: <ViewMessage></ViewMessage>
-            }
-        ]
-    }
-    ,
-    {
-        path: "/dashboard",
-        element: <DashboardLayout></DashboardLayout>,
-        children: [
-            {
-                path: "admin",
-                element: <AdminInfo />
-            },
-            {
-                path: "allUser",
-                element: <AllUser />
-            },
-            {
-                path: "adminCandidate",
-                element: <AdminCandidate />
-            },
-            {
-                path: "adminCompany",
-                element: <AdminCompany></AdminCompany>
-            }
-            ,
-            {
-                path: "adminMessage",
-                element: <AdminMessage></AdminMessage>
-            },
-            {
-                path: "adminBlogPost",
-                element: <AdminBlogPost />
-            },
-            {
-                path: "viewAdminApplication/:id",
-                element: <AdminViewAppliation></AdminViewAppliation>
-            },
-            {
-                path: "viewAdminCompany/:id",
-                element: <AdminViewCompany></AdminViewCompany>
-            },
-            {
-                path: "viewMessage/:id",
-                element: <ViewMessage></ViewMessage>
-            },
-            {
-                path:"applyUser",
-                element:<AdminApply/>
-            }
-
-        ]
-    },
-    {
-        path: "customPost",
-        element: <CustomDashboard />,
-        children: [
-            {
-                path: "video",
-                element: <AllVideo />
-            }
-        ]
-    }
-])
+        element: <Home></Home>,
+      },
+      {
+        path: "service",
+        element: <CompanyService></CompanyService>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
+      },
+      {
+        path: "choose",
+        element: <Choose></Choose>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "license",
+        element: <License />,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: "candidate",
+        element: <Candidate></Candidate>,
+      },
+      {
+        path: "company",
+        element: <Company></Company>,
+      },
+      {
+        path: "application",
+        element: <UserApplication></UserApplication>,
+      },
+      {
+        path: "companyInfo",
+        element: <CompanyTable></CompanyTable>,
+      },
+      {
+        path: "userProfile",
+        element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "applyEvent",
+        element: <ApplyEvent></ApplyEvent>,
+      },
+      {
+        path: "viewApplication/:id",
+        element: <ApplicationView />,
+        loader: ({ params: { id } }) =>
+          fetch(`http://localhost:5000/candidate/${id}`),
+      },
+      {
+        path: "viewCompany/:id",
+        element: <CompanyViewPage />,
+      },
+      {
+        path: "viewMessage/:id",
+        element: <ViewMessage></ViewMessage>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "admin",
+        element: <AdminInfo />,
+      },
+      {
+        path: "allUser",
+        element: <AllUser />,
+      },
+      {
+        path: "adminCandidate",
+        element: <AdminCandidate />,
+      },
+      {
+        path: "adminCompany",
+        element: <AdminCompany></AdminCompany>,
+      },
+      {
+        path: "adminMessage",
+        element: <AdminMessage></AdminMessage>,
+      },
+      {
+        path: "adminBlogPost",
+        element: <AdminBlogPost />,
+      },
+      {
+        path: "viewAdminApplication/:id",
+        element: <AdminViewAppliation></AdminViewAppliation>,
+      },
+      {
+        path: "viewAdminCompany/:id",
+        element: <AdminViewCompany></AdminViewCompany>,
+      },
+      {
+        path: "viewMessage/:id",
+        element: <ViewMessage></ViewMessage>,
+      },
+      {
+        path: "applyUser",
+        element: <AdminApply />,
+      },
+      {
+        path: "videoBlogPost",
+        element: <AdminVideoPost />,
+      },
+    ],
+  },
+  {
+    path: "customPost",
+    element: <CustomDashboard />,
+    children: [
+      {
+        path: "video",
+        element: <AllVideo />,
+      },
+    ],
+  },
+]);
 export default router;

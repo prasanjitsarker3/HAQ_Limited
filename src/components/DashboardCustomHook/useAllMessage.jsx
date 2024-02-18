@@ -1,17 +1,20 @@
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import React from 'react';
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import React from "react";
 
 const useAllMessage = () => {
-    const { data: allMessage = [], isLoading, refetch } = useQuery(["message"], {
-        queryFn: async () => {
-            const res = await axios.get("https://hqa-server.vercel.app/message");
-            return res.data;
-        }
-    });
+  const {
+    data: allMessage = [],
+    isLoading,
+    refetch,
+  } = useQuery(["message"], {
+    queryFn: async () => {
+      const res = await axios.get("http://localhost:5000/message");
+      return res.data;
+    },
+  });
 
-
-    return [allMessage, isLoading, refetch];
+  return [allMessage, isLoading, refetch];
 };
 
 export default useAllMessage;
